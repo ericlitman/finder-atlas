@@ -12,7 +12,13 @@ import {
   statSync,
 } from 'node:fs';
 import { basename, dirname, join, resolve, relative } from 'node:path';
-import { gzipSync, gunzipSync } from 'node:zlib';
+import {
+  gzipSync,
+  gunzipSync,
+  brotliCompressSync,
+  brotliDecompressSync,
+  constants,
+} from 'node:zlib';
 
 type RecordData = { [key: string]: unknown };
 type Verdict = { pairId: string; verdict: string; reason: string };
@@ -282,8 +288,12 @@ const referencedHashes = new Set(
   ),
 );
 for (const prior of [destination, ...(baseline ? [resolve(baseline)] : [])]) {
-  if (!existsSync(join(prior, 'index.json'))) continue;
-  const index = read<{ outputs: { id: string; manifest: Manifest }[] }>(join(prior, 'index.json'));
+  const path = join(prior, 'index.json');
+  if (!existsSync(path) && !existsSync(`${path}.br`)) continue;
+  const bytes = existsSync(path)
+    ? readFileSync(path)
+    : brotliDecompressSync(readFileSync(`${path}.br`));
+  const index = JSON.parse(bytes.toString()) as { outputs: { id: string; manifest: Manifest }[] };
   for (const output of index.outputs) {
     const path = join(prior, 'outputs', `${output.id}.json.gz`);
     const dump = JSON.parse(gunzipSync(readFileSync(path)).toString()) as {
@@ -403,6 +413,17 @@ try {
     stdio: 'inherit',
     env: { ...process.env, ATLAS_ROOT: 'public' },
   });
+  for (const path of readdirSync(destination, { recursive: true, encoding: 'utf8' })) {
+    if (!path.endsWith('.json')) continue;
+    const source = join(destination, path);
+    writeFileSync(
+      `${source}.br`,
+      brotliCompressSync(readFileSync(source), {
+        params: { [constants.BROTLI_PARAM_QUALITY]: 4 },
+      }),
+    );
+    rmSync(source);
+  }
   rmSync(previous, { recursive: true, force: true });
 } catch (error) {
   renameSync(destination, staging);

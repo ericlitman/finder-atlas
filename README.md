@@ -41,4 +41,6 @@ Open a ready PR with a FINDER issue ID. Required format, lint, data verification
 
 `public/data/index.json` contains report analyses and output manifests. Packet, judge, and full output files use gzip; browser-sized output JSON supports interactive inspection. `inventory.json` checksums the exported files. The full archive is split into 16 MB parts to fit Cloudflare Pages' per-file limit; `download.json` records the assembled archive checksum. Use the site's **Download full snapshot** button to join and download it.
 
+Generated JSON is stored as `.json.br` in Git. The build expands it into ordinary JSON in `dist`, preserving its original bytes, paths and inventory hashes. Existing `.json.gz` evidence and snapshot download parts are copied unchanged. This keeps large generated JSON out of text review inputs.
+
 Snapshots preserve reviews, diagnostic candidates, receipts, and provenance. Tool/transport transcripts and unreferenced scorer retries are excluded. Source hashes identify the original source files, whose full byte content may not be included in the filtered export. Snapshots from different reports reuse evaluations and must not be counted as independent trials. Label yield is not false-positive precision; absent prices stay unknown.

@@ -3,7 +3,7 @@ import { gunzipSync } from 'node:zlib';
 import { createHash } from 'node:crypto';
 import vm from 'node:vm';
 import assert from 'node:assert/strict';
-const root = new URL('../' + (process.env.ATLAS_ROOT || 'public') + '/', import.meta.url);
+const root = new URL('../' + (process.env.ATLAS_ROOT || 'dist') + '/', import.meta.url);
 const read = (p) => readFileSync(new URL(p, root));
 const parsed = (p) => JSON.parse(p.endsWith('.gz') ? gunzipSync(read(p)) : read(p));
 const data = parsed('data/index.json');
