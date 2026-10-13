@@ -3,7 +3,7 @@
     "module": "nodenext",
     "moduleResolution": "nodenext",
     "types": ["node"],
-    "rootDir": "src",
+    "rootDir": ".",
     "strict": true,
     "verbatimModuleSyntax": true,
     "noUncheckedIndexedAccess": true,

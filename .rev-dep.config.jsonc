@@ -3,8 +3,8 @@
   "workspaces": [
     {
       "path": ".",
-      "prodEntryPoints": ["src/index.ts"],
-      "devEntryPoints": ["**/*.test.ts"],
+      "prodEntryPoints": ["public/app.js"],
+      "devEntryPoints": ["**/*.test.ts", "scripts/*.ts", "scripts/*.mjs"],
       "circularImportsDetection": { "enabled": true },
       "orphanFilesDetection": { "enabled": true },
       "unusedExportsDetection": { "enabled": true },
