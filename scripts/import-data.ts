@@ -57,11 +57,8 @@ if (!roots.length)
 const destination = resolve('public/data');
 const workspace = resolve('.data-import');
 const staging = join(workspace, 'data');
-if (existsSync(workspace))
-  throw new Error(
-    '.data-import already exists; inspect the previous failed import before removing it.',
-  );
-mkdirSync(staging, { recursive: true });
+mkdirSync(workspace);
+mkdirSync(staging);
 copyFileSync(resolve('public/app.js'), join(workspace, 'app.js'));
 const inventory: { path: string; bytes: number; sha256: string }[] = [];
 const hash = (bytes: Buffer) => createHash('sha256').update(bytes).digest('hex');

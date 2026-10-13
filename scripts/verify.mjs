@@ -178,13 +178,10 @@ for (const path of readdirSync(new URL('data/', root), { recursive: true })) {
   if (!statSync(file).isFile() || snapshotParts.has(path)) continue;
   const bytes = read('data/' + path);
   const text = (path.endsWith('.gz') ? gunzipSync(bytes) : bytes).toString();
-  if (path.endsWith('.json') || path.endsWith('.json.gz'))
-    JSON.parse(text, (key, value) => {
-      scan(key, path);
-      if (typeof value === 'string') scan(value, path);
-      return value;
-    });
-  else scan(text, path);
+  if (path.endsWith('.json') || path.endsWith('.json.gz')) {
+    JSON.parse(text);
+    for (const literal of text.matchAll(/"(?:\\.|[^"\\])*"/g)) scan(JSON.parse(literal[0]), path);
+  } else scan(text, path);
 }
 const full = Buffer.concat(download.parts.map((p) => read('data/' + p)));
 assert.equal(full.length, download.bytes);

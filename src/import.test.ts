@@ -225,6 +225,18 @@ test('scans decoded JSON keys with source-preserved Unicode escapes', () => {
   expect(imported.stderr).toContain('Credential-like text');
 });
 
+test('scans overwritten Unicode JSON values without changing source bytes', () => {
+  const f = fixture();
+  const source = `{"summary":"\\u0073${providerCredential.slice(1)}","summary":"safe"}`;
+  f.put('archive/report-base/union-analysis.json', source);
+  f.put('public/data/sentinel', 'unchanged');
+  const imported = f.runImport();
+  expect(imported.status).not.toBe(0);
+  expect(imported.stderr).toContain('Credential-like text');
+  expect(f.read('.data-import/data/report-base/union-analysis.json').toString()).toBe(source);
+  expect(f.read('public/data/sentinel').toString()).toBe('unchanged');
+});
+
 test('scans decoded multiline JSON strings', () => {
   const f = fixture();
   f.put(
@@ -244,7 +256,7 @@ test('scans exported Markdown verbatim', () => {
   expect(imported.stderr).toContain('Credential-like text');
 });
 
-test('a rejected fine-grained token stays outside a build at the verification boundary', () => {
+test('a rejected token stays outside a boundary build and its workspace refuses another import', () => {
   const f = fixture();
   const first = f.runImport();
   expect(first.status, first.stderr).toBe(0);
@@ -261,4 +273,10 @@ test('a rejected fine-grained token stays outside a build at the verification bo
   expect(gunzipSync(f.read('dist/data/outputs/archive--out-one.json.gz')).toString()).not.toContain(
     token,
   );
+  const staged = snapshot(join(f.root, '.data-import'));
+  const second = f.runImport();
+  expect(second.status).not.toBe(0);
+  expect(second.stderr).toContain('EEXIST');
+  expect(snapshot(join(f.root, '.data-import'))).toEqual(staged);
+  expect(snapshot(join(f.root, 'public/data'))).toEqual(before);
 });
