@@ -23,13 +23,13 @@ import {
 type RecordData = { [key: string]: unknown };
 type Verdict = { pairId: string; verdict: string; reason: string };
 type Analysis = {
-  inputHashes?: { scorerRuns?: Scorers; prior?: { report: string } };
+  inputHashes?: { scorerRuns?: Scorers; prior?: { report: string; analysis: string } };
   [key: string]: unknown;
 };
 type Scorers = {
   attempt: string;
   shards?: Record<string, Scorers>;
-  scorers: Record<string, { rawOutput: string }>;
+  scorers: Record<string, { rawOutput: string; rawOutputSha256: string }>;
 };
 type Packet = {
   split: string;
@@ -54,10 +54,10 @@ const roots = args.map((path) => resolve(path));
 if (!roots.length)
   throw new Error('Usage: pnpm import:data /path/to/qodo-finder [/path/to/another-archive]');
 const destination = resolve('public/data');
-const staging = resolve('public/.data-import');
+const staging = resolve('.data-import');
 if (existsSync(staging))
   throw new Error(
-    'public/.data-import already exists; inspect the previous failed import before removing it.',
+    '.data-import already exists; inspect the previous failed import before removing it.',
   );
 mkdirSync(staging, { recursive: true });
 const inventory: { path: string; bytes: number; sha256: string }[] = [];
@@ -88,8 +88,13 @@ function sourcePath(path: string) {
   }
   throw new Error(`Missing referenced evidence: ${path}`);
 }
-function verdicts(path: string): Verdict[] {
-  let text = readFileSync(path, 'utf8');
+function verifiedSource(path: string, expectedHash: string) {
+  const bytes = readFileSync(sourcePath(path));
+  if (hash(bytes) !== expectedHash) throw new Error(`Source hash mismatch: ${path}`);
+  return bytes;
+}
+function verdicts(bytes: Buffer): Verdict[] {
+  let text = bytes.toString();
   try {
     const parsed = JSON.parse(text) as { result?: string; verdicts?: Verdict[] };
     if (parsed.verdicts) return parsed.verdicts;
@@ -118,7 +123,9 @@ function collectJudges(analysis: Analysis | null) {
     if (runs) {
       for (const shard of runs.shards ? Object.values(runs.shards) : [runs]) {
         for (const [judge, spec] of Object.entries(shard.scorers)) {
-          const rows = verdicts(sourcePath(join(runs.attempt, spec.rawOutput)));
+          const rows = verdicts(
+            verifiedSource(join(runs.attempt, spec.rawOutput), spec.rawOutputSha256),
+          );
           const counts = new Map<string, number>();
           for (const row of rows) counts.set(row.pairId, (counts.get(row.pairId) ?? 0) + 1);
           for (const row of rows) {
@@ -133,20 +140,21 @@ function collectJudges(analysis: Analysis | null) {
         }
       }
     }
-    const prior: string | undefined = current.inputHashes?.prior?.report;
-    if (!prior || visited.has(prior)) break;
-    visited.add(prior);
-    current = read<Analysis>(sourcePath(join(prior, 'analysis.json')));
+    const prior = current.inputHashes?.prior;
+    if (!prior || visited.has(prior.report)) break;
+    visited.add(prior.report);
+    current = JSON.parse(
+      verifiedSource(join(prior.report, 'analysis.json'), prior.analysis).toString(),
+    ) as Analysis;
   }
   return judges;
 }
 function publicResult(result: RecordData) {
-  return Object.fromEntries(
+  const published = Object.fromEntries(
     Object.entries(result).filter(([key]) =>
       [
         'schema',
         'review',
-        'passes',
         'served',
         'bindings',
         'checkout',
@@ -160,6 +168,26 @@ function publicResult(result: RecordData) {
       ].includes(key),
     ),
   );
+  if (result.passes)
+    published.passes = Object.fromEntries(
+      Object.entries(result.passes as Record<string, RecordData>).map(([name, pass]) => [
+        name,
+        Object.fromEntries(
+          Object.entries(pass).filter(([key]) =>
+            [
+              'modelReported',
+              'promptHash',
+              'turns',
+              'usage',
+              'usageIssue',
+              'wallMs',
+              'toolRange',
+            ].includes(key),
+          ),
+        ),
+      ]),
+    );
+  return published;
 }
 type ExportedCell = Cell & { result: RecordData; sourceSha256: string; archived: boolean };
 function liteCells(cells: ExportedCell[]) {
@@ -221,7 +249,8 @@ for (const root of roots) {
       packet: add(`${id}/packet.json.gz`, readFileSync(packetFile), true),
     };
     add(`${id}/judges.json.gz`, collectJudges(analysis), true);
-    if (analysis) hashes.analysis = add(`${id}/analysis.json`, analysis);
+    if (analysis)
+      hashes.analysis = add(`${id}/analysis.json`, readFileSync(join(folder, 'analysis.json')));
     for (const extra of ['analysis.md', 'union-analysis.json', 'union-analysis.md']) {
       if (existsSync(join(folder, extra))) add(`${id}/${extra}`, readFileSync(join(folder, extra)));
     }
@@ -317,7 +346,12 @@ for (const prior of [destination, ...(baseline ? [resolve(baseline)] : [])]) {
       : { cells: [] };
     const combined = [
       ...current.cells,
-      ...cells.map((c) => ({ ...c, result: publicResult(c.result ?? {}), archived: true })),
+      ...cells.map((c) => ({
+        ...c,
+        result: publicResult(c.result ?? {}),
+        ...(c.partialResult ? { partialResult: publicResult(c.partialResult) } : {}),
+        archived: true,
+      })),
     ];
     add(`outputs/${id}.json.gz`, { manifest: output.manifest, cells: combined }, true);
     add(`outputs/${id}.json`, { manifest: output.manifest, cells: liteCells(combined) });
@@ -370,7 +404,10 @@ const defaultReport =
   [...reports]
     .filter(
       (r) =>
-        r.analysis && r.split === 'lockbox' && !/interim|peek|preflight|probe|crossfile/.test(r.id),
+        r.analysis &&
+        r.split === 'lockbox' &&
+        r.mode !== 'cross-file-audit' &&
+        !/interim|peek|preflight|probe/.test(r.id),
     )
     .sort((a, b) => b.modified.localeCompare(a.modified))[0]?.id ?? reports.at(-1)?.id;
 add('index.json', {
@@ -403,9 +440,9 @@ writeFileSync(
     sha256: hash(archive),
   }),
 );
-const previous = `${destination}.previous`;
+const previous = resolve('.data-previous');
 if (existsSync(previous))
-  throw new Error('Previous import backup exists; inspect public/data.previous before continuing.');
+  throw new Error('Previous import backup exists; inspect .data-previous before continuing.');
 if (existsSync(destination)) renameSync(destination, previous);
 renameSync(staging, destination);
 try {

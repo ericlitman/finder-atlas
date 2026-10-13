@@ -29,7 +29,7 @@ pnpm test
 pnpm build
 ```
 
-The importer discovers report packets and output manifests, follows each analysis's scorer/prior references, preserves archived retries, and writes `public/data`. A missing referenced scorer file stops the import. It validates report totals, judge coverage, findings, hashes, and the downloadable snapshot before replacing the previous dataset; a failed verification restores the previous data.
+The importer discovers report packets and output manifests, follows each analysis's scorer/prior references, preserves archived retries, and writes `public/data`. Missing referenced files or mismatches with their recorded hashes stop the import. It validates report totals, judge coverage, findings, hashes, and the downloadable snapshot before replacing the previous dataset; a failed verification restores the previous data. Staging and backups live in `.data-import` and `.data-previous` outside the published `public` tree.
 
 Previously published records are retained when their original source hashes are still referenced but the raw source files have changed. On the initial migration only, `--baseline /path/to/old-site/data` can supply a prior Finder Atlas snapshot. Future imports automatically use the existing `public/data` as that baseline. Original records that cannot be recovered are listed in `index.json`'s `evidenceGaps`; the UI explicitly identifies those gaps and keeps the saved summary totals. It never substitutes a different retry for missing evidence.
 

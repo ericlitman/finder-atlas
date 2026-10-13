@@ -192,6 +192,7 @@ function setReport(id) {
     data.reports.at(-1);
   selected = new Set(report.arms.map((a) => a.family));
   $('#report-select').value = report.id;
+  $('#basis-select').disabled = !report.analysis;
   findings = [];
   page = 0;
   reportEpoch++;
@@ -233,8 +234,9 @@ function render() {
     b.classList.toggle('active', b.dataset.view === view);
     b.setAttribute('aria-current', b.dataset.view === view ? 'page' : 'false');
   });
-  $('#notice').textContent =
-    report.mode === 'cross-file-audit'
+  $('#notice').textContent = !report.analysis
+    ? 'Unscored report. Showing recorded findings; scored comparison bases do not apply.'
+    : report.mode === 'cross-file-audit'
       ? 'Diagnostic cross-file audit. This report does not measure published-finding recall or yield.'
       : `${basis === 'planned' ? 'Planned-matrix recall includes uncovered cells in the denominator.' : 'Shared-cell comparisons use only cells every selected lane completed.'} Label yield is matched labels ÷ published findings, not false-positive precision. Costs cover successful finder cells at recorded list prices.`;
   const gaps = (data.evidenceGaps || []).filter((g) => g.report === report.id);
@@ -501,7 +503,7 @@ function filterFindings() {
   const matches = findings.filter(
     (f) =>
       selected.has(f.arm) &&
-      (basis !== 'shared' || sharedUnits.has(f.cellId)) &&
+      (basis !== 'shared' || !report.analysis || sharedUnits.has(f.cellId)) &&
       (findingKind === 'all' || f.kind === findingKind) &&
       (outcome === 'all' || f.outcome === outcome) &&
       f.search.includes(query.toLowerCase()),

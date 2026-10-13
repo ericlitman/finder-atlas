@@ -1,6 +1,7 @@
 import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { gunzipSync } from 'node:zlib';
 import { createHash } from 'node:crypto';
+import { basename } from 'node:path';
 import vm from 'node:vm';
 import assert from 'node:assert/strict';
 const root = new URL('../' + (process.env.ATLAS_ROOT || 'dist') + '/', import.meta.url);
@@ -84,6 +85,17 @@ for (const r of data.reports) {
     r.hashes.packet,
   );
   if (r.analysis) {
+    assert.equal(
+      createHash('sha256')
+        .update(read(`data/${r.id}/analysis.json`))
+        .digest('hex'),
+      r.hashes.analysis,
+    );
+    const prior = r.analysis.inputHashes?.prior;
+    const parent =
+      prior && data.reports.find((candidate) => candidate.id === basename(prior.report));
+    if (parent)
+      assert.equal(parent.hashes.analysis, prior.analysis, r.id + ' prior analysis identity');
     let missing = 0,
       unidentified = 0;
     for (const p of packet.pairs) {
@@ -111,6 +123,15 @@ for (const r of data.reports) {
   }
   await vm.runInContext('loadFindings()', context);
   const fs = vm.runInContext('findings', context);
+  if (!r.analysis) {
+    vm.runInContext('basis="shared"; filterFindings()', context);
+    assert.ok(
+      element.innerHTML.includes(
+        `${fs.filter((f) => f.kind === 'published').length.toLocaleString()} findings`,
+      ),
+      r.id + ' unscored findings remain visible',
+    );
+  }
   if (r.analysis && r.mode !== 'cross-file-audit')
     for (const s of r.analysis.fullSummary) {
       const found = fs.filter((f) => f.arm === s.family && f.kind === 'published');
@@ -147,12 +168,20 @@ for (const entry of inventory)
     entry.path,
   );
 const credentialPattern =
-  /AKIA[0-9A-Z]{16}|gh[pousr]_[A-Za-z0-9]{30,}|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|sk-(?:proj-|ant-)[A-Za-z0-9_-]{30,}/;
+  /AKIA[0-9A-Z]{16}|gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{20,}|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|sk-(?:proj-|ant-)[A-Za-z0-9_-]{30,}/;
 for (const entry of inventory) {
   if (!entry.path.endsWith('.json') && !entry.path.endsWith('.json.gz')) continue;
   const bytes = read(entry.path);
   const text = (entry.path.endsWith('.gz') ? gunzipSync(bytes) : bytes).toString();
   assert.ok(!credentialPattern.test(text), 'Credential-like text in ' + entry.path);
+  if (entry.path.startsWith('data/outputs/') && entry.path.endsWith('.json.gz'))
+    for (const cell of JSON.parse(text).cells)
+      for (const result of [cell.result, cell.partialResult])
+        for (const pass of Object.values(result?.passes || {}))
+          assert.ok(
+            !('rawUsage' in pass) && !('finalText' in pass),
+            'Transport transcript in ' + entry.path,
+          );
 }
 const dl = parsed('data/download.json');
 const full = Buffer.concat(dl.parts.map((p) => read('data/' + p)));
