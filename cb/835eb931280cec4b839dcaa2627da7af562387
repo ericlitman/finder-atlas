@@ -1,0 +1,19 @@
+src/atlas.test.ts
+  s_87bd9c6c7a4cab::t_6805799850a772 1-2,5-46
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "cb835eb931280cec4b839dcaa2627da7af562387",
+  "prompts": {},
+  "sessions": {
+    "s_87bd9c6c7a4cab": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0ce78-0b0e-7e52-a717-769a11a9d1f8",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Eric Litman <eric@litman.org>"
+    }
+  }
+}
