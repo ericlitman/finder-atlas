@@ -6,7 +6,9 @@ import {
   mkdirSync,
   mkdtempSync,
   readFileSync,
+  readdirSync,
   rmSync,
+  statSync,
   utimesSync,
   writeFileSync,
 } from 'node:fs';
@@ -20,6 +22,14 @@ afterEach(() => {
   for (const root of temporary.splice(0)) rmSync(root, { recursive: true, force: true });
 });
 const hash = (bytes: string) => createHash('sha256').update(bytes).digest('hex');
+const providerCredential = 'sk-' + 'synthetic_'.repeat(4);
+
+function snapshot(path: string) {
+  return readdirSync(path, { recursive: true, encoding: 'utf8' })
+    .filter((entry) => statSync(join(path, entry)).isFile())
+    .sort()
+    .map((entry) => [entry, readFileSync(join(path, entry))]);
+}
 
 function fixture() {
   const root = mkdtempSync(join(tmpdir(), 'finder-import-'));
@@ -119,10 +129,23 @@ function fixture() {
       ['scripts/import-data.ts', join(root, 'archive'), '--baseline', join(root, 'legacy')],
       { cwd: root, encoding: 'utf8' },
     );
-  const build = () =>
-    spawnSync(process.execPath, ['scripts/build.ts'], { cwd: root, encoding: 'utf8' });
+  function putResult(summary: string) {
+    put('archive/out-one/cells/raw/one.json', {
+      ...cell,
+      result: { review: { findings: [], summary } },
+    });
+  }
+  function buildAtVerification() {
+    const verifier = join(root, 'scripts/verify.mjs');
+    writeFileSync(
+      verifier,
+      "import { execFileSync as build } from 'node:child_process';\n" +
+        "build(process.execPath, ['scripts/build.ts'], { stdio: 'inherit' });\n" +
+        readFileSync(verifier, 'utf8'),
+    );
+  }
   const read = (path: string) => readFileSync(join(root, path));
-  return { root, put, analysis, cell, runImport, build, read };
+  return { root, put, analysis, runImport, putResult, buildAtVerification, read };
 }
 
 test('import preserves analysis bytes and filters transport data from complete, partial and preserved cells', () => {
@@ -146,6 +169,8 @@ test('import preserves analysis bytes and filters transport data from complete, 
         modelReported: 'test',
       });
     }
+  expect(existsSync(join(f.root, '.data-import'))).toBe(false);
+  expect(existsSync(join(f.root, '.data-previous'))).toBe(false);
 });
 
 test.each(['scorer', 'prior'])(
@@ -162,25 +187,77 @@ test.each(['scorer', 'prior'])(
   },
 );
 
-test('a rejected fine-grained token stays outside the build and restores the prior dataset', () => {
+test.each([
+  ['OpenAI service account', 'sk-svcacct-' + 'a'.repeat(30)],
+  ['OpenAI admin', 'sk-admin-' + 'a'.repeat(30)],
+  ['OpenRouter', 'sk-or-v1-' + 'a'.repeat(30)],
+  ['xAI', 'xai-' + 'a'.repeat(30)],
+  ['GitHub classic', 'ghp_' + 'a'.repeat(30)],
+  ['GitHub fine-grained', 'github_pat_' + 'a'.repeat(20)],
+  ['AWS long-term', 'AKIA' + 'A'.repeat(16)],
+  ['AWS temporary', 'ASIA' + 'A'.repeat(16)],
+  ['generic private key', '-----BEGIN PRIVATE KEY-----'],
+  ['encrypted private key', '-----BEGIN ENCRYPTED PRIVATE KEY-----'],
+  ['PGP private key', '-----BEGIN PGP PRIVATE KEY BLOCK-----'],
+])('rejects %s credential-shaped content', (_name, credential) => {
+  const f = fixture();
+  f.putResult(credential);
+  const imported = f.runImport();
+  expect(imported.status).not.toBe(0);
+  expect(imported.stderr).toContain('Credential-like text');
+});
+
+test('allows a path containing a provider prefix without its left boundary', () => {
+  const f = fixture();
+  f.putResult('task-scheduler-retry-backoff-handler.ts');
+  const imported = f.runImport();
+  expect(imported.status, imported.stderr).toBe(0);
+});
+
+test('scans decoded JSON keys with source-preserved Unicode escapes', () => {
+  const f = fixture();
+  f.put(
+    'archive/report-base/union-analysis.json',
+    `{"\\u0073${providerCredential.slice(1)}":"value"}`,
+  );
+  const imported = f.runImport();
+  expect(imported.status).not.toBe(0);
+  expect(imported.stderr).toContain('Credential-like text');
+});
+
+test('scans decoded multiline JSON strings', () => {
+  const f = fixture();
+  f.put(
+    'archive/report-base/union-analysis.json',
+    JSON.stringify({ summary: `first line\n${providerCredential}` }),
+  );
+  const imported = f.runImport();
+  expect(imported.status).not.toBe(0);
+  expect(imported.stderr).toContain('Credential-like text');
+});
+
+test('scans exported Markdown verbatim', () => {
+  const f = fixture();
+  f.put('archive/report-base/analysis.md', `Notes\n\n${providerCredential}\n`);
+  const imported = f.runImport();
+  expect(imported.status).not.toBe(0);
+  expect(imported.stderr).toContain('Credential-like text');
+});
+
+test('a rejected fine-grained token stays outside a build at the verification boundary', () => {
   const f = fixture();
   const first = f.runImport();
   expect(first.status, first.stderr).toBe(0);
-  const before = f.read('public/data/index.json.br');
+  const before = snapshot(join(f.root, 'public/data'));
   const token = 'github_pat_' + 'synthetic_test_'.repeat(5);
-  f.put('archive/out-one/cells/raw/one.json', {
-    ...f.cell,
-    result: { review: { findings: [], summary: token } },
-  });
+  f.putResult(token);
+  f.buildAtVerification();
   const rejected = f.runImport();
   expect(rejected.status).not.toBe(0);
   expect(rejected.stderr).toContain('Credential-like text');
-  expect(f.read('public/data/index.json.br')).toEqual(before);
+  expect(snapshot(join(f.root, 'public/data'))).toEqual(before);
   expect(existsSync(join(f.root, '.data-import'))).toBe(true);
-  const built = f.build();
-  expect(built.status, built.stderr).toBe(0);
-  expect(existsSync(join(f.root, 'dist/.data-import'))).toBe(false);
-  expect(existsSync(join(f.root, 'dist/data.previous'))).toBe(false);
+  expect(existsSync(join(f.root, '.data-previous'))).toBe(false);
   expect(gunzipSync(f.read('dist/data/outputs/archive--out-one.json.gz')).toString()).not.toContain(
     token,
   );

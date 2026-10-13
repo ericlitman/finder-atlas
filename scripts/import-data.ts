@@ -1,6 +1,7 @@
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import {
+  copyFileSync,
   existsSync,
   readFileSync,
   readdirSync,
@@ -54,12 +55,14 @@ const roots = args.map((path) => resolve(path));
 if (!roots.length)
   throw new Error('Usage: pnpm import:data /path/to/qodo-finder [/path/to/another-archive]');
 const destination = resolve('public/data');
-const staging = resolve('.data-import');
-if (existsSync(staging))
+const workspace = resolve('.data-import');
+const staging = join(workspace, 'data');
+if (existsSync(workspace))
   throw new Error(
     '.data-import already exists; inspect the previous failed import before removing it.',
   );
 mkdirSync(staging, { recursive: true });
+copyFileSync(resolve('public/app.js'), join(workspace, 'app.js'));
 const inventory: { path: string; bytes: number; sha256: string }[] = [];
 const hash = (bytes: Buffer) => createHash('sha256').update(bytes).digest('hex');
 const read = <T>(path: string): T => JSON.parse(readFileSync(path, 'utf8')) as T;
@@ -440,31 +443,31 @@ writeFileSync(
     sha256: hash(archive),
   }),
 );
+execFileSync(process.execPath, ['scripts/verify.mjs'], {
+  stdio: 'inherit',
+  env: { ...process.env, ATLAS_ROOT: '.data-import' },
+});
+for (const path of readdirSync(staging, { recursive: true, encoding: 'utf8' })) {
+  if (!path.endsWith('.json')) continue;
+  const source = join(staging, path);
+  writeFileSync(
+    `${source}.br`,
+    brotliCompressSync(readFileSync(source), {
+      params: { [constants.BROTLI_PARAM_QUALITY]: 4 },
+    }),
+  );
+  rmSync(source);
+}
 const previous = resolve('.data-previous');
 if (existsSync(previous))
   throw new Error('Previous import backup exists; inspect .data-previous before continuing.');
 if (existsSync(destination)) renameSync(destination, previous);
-renameSync(staging, destination);
 try {
-  execFileSync(process.execPath, ['scripts/verify.mjs'], {
-    stdio: 'inherit',
-    env: { ...process.env, ATLAS_ROOT: 'public' },
-  });
-  for (const path of readdirSync(destination, { recursive: true, encoding: 'utf8' })) {
-    if (!path.endsWith('.json')) continue;
-    const source = join(destination, path);
-    writeFileSync(
-      `${source}.br`,
-      brotliCompressSync(readFileSync(source), {
-        params: { [constants.BROTLI_PARAM_QUALITY]: 4 },
-      }),
-    );
-    rmSync(source);
-  }
-  rmSync(previous, { recursive: true, force: true });
+  renameSync(staging, destination);
 } catch (error) {
-  renameSync(destination, staging);
   if (existsSync(previous)) renameSync(previous, destination);
   throw error;
 }
+rmSync(previous, { recursive: true, force: true });
+rmSync(workspace, { recursive: true, force: true });
 console.log(`Imported ${reports.length} reports and ${outputs.length} output runs.`);

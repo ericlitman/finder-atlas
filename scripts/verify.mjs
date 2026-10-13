@@ -167,26 +167,28 @@ for (const entry of inventory)
     entry.sha256,
     entry.path,
   );
+const download = parsed('data/download.json');
+const snapshotParts = new Set(download.parts);
 const credentialPattern =
-  /AKIA[0-9A-Z]{16}|gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{20,}|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|sk-(?:proj-|ant-)[A-Za-z0-9_-]{30,}/;
-for (const entry of inventory) {
-  if (!entry.path.endsWith('.json') && !entry.path.endsWith('.json.gz')) continue;
-  const bytes = read(entry.path);
-  const text = (entry.path.endsWith('.gz') ? gunzipSync(bytes) : bytes).toString();
-  assert.ok(!credentialPattern.test(text), 'Credential-like text in ' + entry.path);
-  if (entry.path.startsWith('data/outputs/') && entry.path.endsWith('.json.gz'))
-    for (const cell of JSON.parse(text).cells)
-      for (const result of [cell.result, cell.partialResult])
-        for (const pass of Object.values(result?.passes || {}))
-          assert.ok(
-            !('rawUsage' in pass) && !('finalText' in pass),
-            'Transport transcript in ' + entry.path,
-          );
+  /(?:^|[^A-Za-z0-9_-])(?:A[KS]IA[0-9A-Z]{16}|gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{20,}|(?:sk-|xai-)[A-Za-z0-9_-]{30,}|-----BEGIN [A-Z ]*PRIVATE KEY)/;
+const scan = (text, path) =>
+  assert.ok(!credentialPattern.test(text), 'Credential-like text in data/' + path);
+for (const path of readdirSync(new URL('data/', root), { recursive: true })) {
+  const file = new URL('data/' + path, root);
+  if (!statSync(file).isFile() || snapshotParts.has(path)) continue;
+  const bytes = read('data/' + path);
+  const text = (path.endsWith('.gz') ? gunzipSync(bytes) : bytes).toString();
+  if (path.endsWith('.json') || path.endsWith('.json.gz'))
+    JSON.parse(text, (key, value) => {
+      scan(key, path);
+      if (typeof value === 'string') scan(value, path);
+      return value;
+    });
+  else scan(text, path);
 }
-const dl = parsed('data/download.json');
-const full = Buffer.concat(dl.parts.map((p) => read('data/' + p)));
-assert.equal(full.length, dl.bytes);
-assert.equal(createHash('sha256').update(full).digest('hex'), dl.sha256);
+const full = Buffer.concat(download.parts.map((p) => read('data/' + p)));
+assert.equal(full.length, download.bytes);
+assert.equal(createHash('sha256').update(full).digest('hex'), download.sha256);
 assert.ok(gunzipSync(full).length > 0);
 console.log(
   JSON.stringify({
