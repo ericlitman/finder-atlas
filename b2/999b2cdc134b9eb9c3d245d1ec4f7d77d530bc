@@ -1,0 +1,27 @@
+scripts/verify.mjs
+  s_87bd9c6c7a4cab::t_c7dbd63f3c836b 6
+scripts/import-data.ts
+  s_87bd9c6c7a4cab::t_c7dbd63f3c836b 15-19,21,291-296,417-422,424-426
+package.json
+  s_87bd9c6c7a4cab::t_c7dbd63f3c836b 9,12
+README.md
+  s_87bd9c6c7a4cab::t_c7dbd63f3c836b 44-45
+scripts/build.ts
+  s_87bd9c6c7a4cab::t_c7dbd63f3c836b 1-3,7-11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "b2999b2cdc134b9eb9c3d245d1ec4f7d77d530bc",
+  "prompts": {},
+  "sessions": {
+    "s_87bd9c6c7a4cab": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0ce78-0b0e-7e52-a717-769a11a9d1f8",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Eric Litman <eric@litman.org>"
+    }
+  }
+}
