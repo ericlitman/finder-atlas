@@ -6,7 +6,10 @@
     "format": "oxfmt .",
     "format:check": "oxfmt --check .",
     "lint": "oxlint --type-aware --type-check --deny-warnings . && rev-dep config run",
-    "test": "vitest run"
+    "test": "vitest run && node scripts/verify.mjs",
+    "build": "node scripts/build.ts",
+    "import:data": "node scripts/import-data.ts",
+    "verify:data": "node scripts/verify.mjs"
   },
   "devDependencies": {
     "@types/node": "22.20.5",

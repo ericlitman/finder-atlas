@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Explore Qodo bug-finding evaluations, model performance, coverage, and finding-level evidence."
+    />
+    <title>Finder Atlas · Qodo evaluations</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%231e5045'/%3E%3Cpath d='M8 22V10h16M8 16h12' fill='none' stroke='%23e8eec9' stroke-width='3'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <aside class="sidebar">
+      <a href="#overview" class="brand"
+        ><span class="mark">f<span>·</span></span
+        ><span>finder<span class="brand-light">atlas</span></span></a
+      >
+      <div class="workspace">
+        <span class="workspace-icon">F</span>
+        <div>Finder Atlas<small>Qodo benchmark collection</small></div>
+      </div>
+      <div class="nav-label">EXPLORE</div>
+      <nav aria-label="Main navigation">
+        <button data-view="overview" class="active"><span>◈</span> Overview</button
+        ><button data-view="coverage"><span>▦</span> Coverage matrix</button
+        ><button data-view="findings"><span>⌕</span> Findings explorer</button
+        ><button data-view="archive"><span>▤</span> Run archive</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="snapshot-dot">Static snapshot</div>
+        <p id="snapshot-date">Reading archive…</p>
+        <a href="qodo-snapshot.tar.gz" download>Download full snapshot <span>↗</span></a
+        ><span class="version">FINDER ATLAS / 01</span>
+      </div>
+    </aside>
+    <div class="shell">
+      <header>
+        <div class="breadcrumb">Evaluations <span>/</span> <strong>Bug finding</strong></div>
+        <div class="header-right">
+          <span class="live-dot"></span> Frozen evidence
+          <a href="#archive" class="text-link">View provenance ↗</a>
+        </div>
+      </header>
+      <main>
+        <section class="page-heading">
+          <div>
+            <div class="eyebrow">THE QODO COLLECTION <span> / </span> MODEL EVALUATIONS</div>
+            <h1 id="page-title">A closer look at what finds bugs.</h1>
+            <p id="page-description">
+              Compare the finders. Follow the evidence. See what each review caught.
+            </p>
+          </div>
+          <div class="snapshot-tag">● &nbsp; READ-ONLY SNAPSHOT</div>
+        </section>
+        <div class="control-bar">
+          <label class="report-label"
+            >Evaluation report<select id="report-select" aria-label="Evaluation report">
+              <option>Loading reports…</option>
+            </select></label
+          ><label
+            >Comparison basis<select id="basis-select" aria-label="Comparison basis">
+              <option value="planned">Full planned matrix</option>
+              <option value="shared">Cells completed by every selected lane</option>
+            </select></label
+          ><button id="lanes-toggle" class="outline">
+            Select lanes <span id="lane-count"></span> ▾</button
+          ><button id="reset" class="icon-button" title="Reset filters" aria-label="Reset filters">
+            ↺
+          </button>
+        </div>
+        <div id="lane-picker" class="lane-picker" hidden></div>
+        <div id="notice" class="notice" role="status"></div>
+        <div id="content" aria-live="polite">
+          <div class="loading">Loading the evaluation archive…</div>
+        </div>
+        <footer>
+          <span
+            >Made with ❤️ in NYC by <a href="https://github.com/ericlitman">Eric Litman</a></span
+          >
+        </footer>
+      </main>
+    </div>
+    <dialog id="detail">
+      <div class="dialog-top">
+        <span id="detail-eyebrow" class="eyebrow">FINDING DETAIL</span
+        ><button id="close-detail" aria-label="Close detail">✕</button>
+      </div>
+      <div id="detail-content"></div>
+    </dialog>
+    <div id="toast" role="status"></div>
+  </body>
+</html>

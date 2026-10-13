@@ -1,0 +1,4213 @@
+{
+  "schema": "mastra-411/union-analysis/1",
+  "incumbent": "t-sol61-xhigh",
+  "seed": 411,
+  "resamples": 10000,
+  "unitIds": [
+    "006/r1",
+    "006/r2",
+    "021/r1",
+    "021/r2",
+    "028/r1",
+    "028/r2",
+    "037/r1",
+    "037/r2",
+    "041/r1",
+    "041/r2",
+    "050/r1",
+    "050/r2",
+    "054/r1",
+    "054/r2",
+    "055/r1",
+    "055/r2",
+    "060/r1",
+    "060/r2",
+    "062/r1",
+    "062/r2",
+    "064/r1",
+    "064/r2",
+    "074/r1",
+    "074/r2",
+    "080/r1",
+    "080/r2",
+    "086/r1",
+    "086/r2",
+    "088/r1",
+    "088/r2",
+    "090/r1",
+    "090/r2"
+  ],
+  "unions": [
+    {
+      "family": "t-sol61-xhigh∪w-musewonder-xhigh",
+      "rows": [
+        {
+          "tag": "006",
+          "repetition": "r1",
+          "eligibleLabels": 4,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L6-0",
+            "L6-1",
+            "L6-3"
+          ],
+          "published": 16,
+          "dollars": 2.4069944,
+          "wallMs": 874211.0759579999,
+          "overlap": {
+            "intersection": 3,
+            "union": 3
+          },
+          "marginal": [],
+          "lower": [
+            "L6-0",
+            "L6-1",
+            "L6-3"
+          ],
+          "upper": [
+            "L6-0",
+            "L6-1",
+            "L6-3"
+          ]
+        },
+        {
+          "tag": "006",
+          "repetition": "r2",
+          "eligibleLabels": 4,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L6-0",
+            "L6-1",
+            "L6-3"
+          ],
+          "published": 16,
+          "dollars": 2.2439808,
+          "wallMs": 954828.3203330002,
+          "overlap": {
+            "intersection": 3,
+            "union": 3
+          },
+          "marginal": [],
+          "lower": [
+            "L6-0",
+            "L6-1",
+            "L6-3"
+          ],
+          "upper": [
+            "L6-0",
+            "L6-1",
+            "L6-3"
+          ]
+        },
+        {
+          "tag": "021",
+          "repetition": "r1",
+          "eligibleLabels": 6,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L21-0",
+            "L21-1",
+            "L21-3"
+          ],
+          "published": 8,
+          "dollars": 3.47761,
+          "wallMs": 837395.475625,
+          "overlap": {
+            "intersection": 3,
+            "union": 3
+          },
+          "marginal": [],
+          "lower": [
+            "L21-0",
+            "L21-1",
+            "L21-3"
+          ],
+          "upper": [
+            "L21-0",
+            "L21-1",
+            "L21-3"
+          ]
+        },
+        {
+          "tag": "021",
+          "repetition": "r2",
+          "eligibleLabels": 6,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L21-0",
+            "L21-1",
+            "L21-3"
+          ],
+          "published": 6,
+          "dollars": 2.4317,
+          "wallMs": 821788.1032079998,
+          "overlap": {
+            "intersection": 2,
+            "union": 3
+          },
+          "marginal": [],
+          "lower": [
+            "L21-0",
+            "L21-1",
+            "L21-3"
+          ],
+          "upper": [
+            "L21-0",
+            "L21-1",
+            "L21-3",
+            "L21-4"
+          ]
+        },
+        {
+          "tag": "028",
+          "repetition": "r1",
+          "eligibleLabels": 8,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L28-0",
+            "L28-1",
+            "L28-2",
+            "L28-3"
+          ],
+          "published": 8,
+          "dollars": 1.3996108,
+          "wallMs": 625851.8426249996,
+          "overlap": {
+            "intersection": 3,
+            "union": 4
+          },
+          "marginal": [],
+          "lower": [
+            "L28-0",
+            "L28-1",
+            "L28-2",
+            "L28-3"
+          ],
+          "upper": [
+            "L28-0",
+            "L28-1",
+            "L28-2",
+            "L28-3"
+          ]
+        },
+        {
+          "tag": "028",
+          "repetition": "r2",
+          "eligibleLabels": 8,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L28-0",
+            "L28-1",
+            "L28-2",
+            "L28-3"
+          ],
+          "published": 7,
+          "dollars": 1.1014675999999999,
+          "wallMs": 655873.0344169997,
+          "overlap": {
+            "intersection": 3,
+            "union": 4
+          },
+          "marginal": [],
+          "lower": [
+            "L28-0",
+            "L28-1",
+            "L28-2",
+            "L28-3"
+          ],
+          "upper": [
+            "L28-0",
+            "L28-1",
+            "L28-2",
+            "L28-3"
+          ]
+        },
+        {
+          "tag": "037",
+          "repetition": "r1",
+          "eligibleLabels": 8,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L37-1",
+            "L37-2",
+            "L37-3",
+            "L37-4",
+            "L37-6",
+            "L37-7"
+          ],
+          "published": 18,
+          "dollars": 1.7472176,
+          "wallMs": 894471.977458,
+          "overlap": {
+            "intersection": 5,
+            "union": 6
+          },
+          "marginal": [],
+          "lower": [
+            "L37-1",
+            "L37-2",
+            "L37-3",
+            "L37-4",
+            "L37-6",
+            "L37-7"
+          ],
+          "upper": [
+            "L37-1",
+            "L37-2",
+            "L37-3",
+            "L37-4",
+            "L37-6",
+            "L37-7"
+          ]
+        },
+        {
+          "tag": "037",
+          "repetition": "r2",
+          "eligibleLabels": 8,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L37-1",
+            "L37-2",
+            "L37-3",
+            "L37-4",
+            "L37-6",
+            "L37-7"
+          ],
+          "published": 18,
+          "dollars": 1.9116556,
+          "wallMs": 711046.0923339999,
+          "overlap": {
+            "intersection": 6,
+            "union": 6
+          },
+          "marginal": [],
+          "lower": [
+            "L37-1",
+            "L37-2",
+            "L37-3",
+            "L37-4",
+            "L37-6",
+            "L37-7"
+          ],
+          "upper": [
+            "L37-1",
+            "L37-2",
+            "L37-3",
+            "L37-4",
+            "L37-6",
+            "L37-7"
+          ]
+        },
+        {
+          "tag": "041",
+          "repetition": "r1",
+          "eligibleLabels": 7,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L41-1"
+          ],
+          "published": 5,
+          "dollars": 2.9397852,
+          "wallMs": 895398.1913330001,
+          "overlap": {
+            "intersection": 1,
+            "union": 1
+          },
+          "marginal": [],
+          "lower": [
+            "L41-1"
+          ],
+          "upper": [
+            "L41-1"
+          ]
+        },
+        {
+          "tag": "041",
+          "repetition": "r2",
+          "eligibleLabels": 7,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L41-1"
+          ],
+          "published": 7,
+          "dollars": 1.926438,
+          "wallMs": 921328.040666,
+          "overlap": {
+            "intersection": 1,
+            "union": 1
+          },
+          "marginal": [],
+          "lower": [
+            "L41-1"
+          ],
+          "upper": [
+            "L41-1"
+          ]
+        },
+        {
+          "tag": "050",
+          "repetition": "r1",
+          "eligibleLabels": 5,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L50-0",
+            "L50-1",
+            "L50-2"
+          ],
+          "published": 8,
+          "dollars": 2.5478724,
+          "wallMs": 1058974.4817500003,
+          "overlap": {
+            "intersection": 2,
+            "union": 3
+          },
+          "marginal": [
+            "L50-0"
+          ],
+          "lower": [
+            "L50-0",
+            "L50-1",
+            "L50-2"
+          ],
+          "upper": [
+            "L50-0",
+            "L50-1",
+            "L50-2"
+          ]
+        },
+        {
+          "tag": "050",
+          "repetition": "r2",
+          "eligibleLabels": 5,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L50-0",
+            "L50-1",
+            "L50-2"
+          ],
+          "published": 9,
+          "dollars": 2.7936964,
+          "wallMs": 887983.8392500002,
+          "overlap": {
+            "intersection": 2,
+            "union": 3
+          },
+          "marginal": [
+            "L50-0"
+          ],
+          "lower": [
+            "L50-0",
+            "L50-1",
+            "L50-2"
+          ],
+          "upper": [
+            "L50-0",
+            "L50-1",
+            "L50-2"
+          ]
+        },
+        {
+          "tag": "054",
+          "repetition": "r1",
+          "eligibleLabels": 9,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L54-0"
+          ],
+          "published": 2,
+          "dollars": 1.9876475999999998,
+          "wallMs": 539658.5220409995,
+          "overlap": {
+            "intersection": 0,
+            "union": 1
+          },
+          "marginal": [
+            "L54-0"
+          ],
+          "lower": [
+            "L54-0"
+          ],
+          "upper": [
+            "L54-0",
+            "L54-1"
+          ]
+        },
+        {
+          "tag": "054",
+          "repetition": "r2",
+          "eligibleLabels": 9,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L54-0"
+          ],
+          "published": 2,
+          "dollars": 2.2992728000000002,
+          "wallMs": 574147.1720409999,
+          "overlap": {
+            "intersection": 0,
+            "union": 1
+          },
+          "marginal": [
+            "L54-0"
+          ],
+          "lower": [
+            "L54-0"
+          ],
+          "upper": [
+            "L54-0"
+          ]
+        },
+        {
+          "tag": "055",
+          "repetition": "r1",
+          "eligibleLabels": 6,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L55-0",
+            "L55-1",
+            "L55-2",
+            "L55-3"
+          ],
+          "published": 8,
+          "dollars": 1.8753064,
+          "wallMs": 568622.4060000004,
+          "overlap": {
+            "intersection": 2,
+            "union": 4
+          },
+          "marginal": [
+            "L55-0",
+            "L55-1"
+          ],
+          "lower": [
+            "L55-0",
+            "L55-1",
+            "L55-2",
+            "L55-3"
+          ],
+          "upper": [
+            "L55-0",
+            "L55-1",
+            "L55-2",
+            "L55-3"
+          ]
+        },
+        {
+          "tag": "055",
+          "repetition": "r2",
+          "eligibleLabels": 6,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L55-1",
+            "L55-2",
+            "L55-3"
+          ],
+          "published": 5,
+          "dollars": 1.9665692,
+          "wallMs": 504179.53629199974,
+          "overlap": {
+            "intersection": 2,
+            "union": 3
+          },
+          "marginal": [
+            "L55-1"
+          ],
+          "lower": [
+            "L55-1",
+            "L55-2",
+            "L55-3"
+          ],
+          "upper": [
+            "L55-1",
+            "L55-2",
+            "L55-3"
+          ]
+        },
+        {
+          "tag": "060",
+          "repetition": "r1",
+          "eligibleLabels": 4,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L60-0",
+            "L60-1",
+            "L60-2",
+            "L60-3"
+          ],
+          "published": 8,
+          "dollars": 2.6860064,
+          "wallMs": 648601.3998329998,
+          "overlap": {
+            "intersection": 4,
+            "union": 4
+          },
+          "marginal": [],
+          "lower": [
+            "L60-0",
+            "L60-1",
+            "L60-2",
+            "L60-3"
+          ],
+          "upper": [
+            "L60-0",
+            "L60-1",
+            "L60-2",
+            "L60-3"
+          ]
+        },
+        {
+          "tag": "060",
+          "repetition": "r2",
+          "eligibleLabels": 4,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L60-0",
+            "L60-1",
+            "L60-2",
+            "L60-3"
+          ],
+          "published": 8,
+          "dollars": 2.7560376,
+          "wallMs": 866952.3316250001,
+          "overlap": {
+            "intersection": 4,
+            "union": 4
+          },
+          "marginal": [],
+          "lower": [
+            "L60-0",
+            "L60-1",
+            "L60-2",
+            "L60-3"
+          ],
+          "upper": [
+            "L60-0",
+            "L60-1",
+            "L60-2",
+            "L60-3"
+          ]
+        },
+        {
+          "tag": "062",
+          "repetition": "r1",
+          "eligibleLabels": 5,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L62-1",
+            "L62-2",
+            "L62-3",
+            "L62-4"
+          ],
+          "published": 7,
+          "dollars": 1.2876072,
+          "wallMs": 535835.0916670002,
+          "overlap": {
+            "intersection": 3,
+            "union": 4
+          },
+          "marginal": [
+            "L62-4"
+          ],
+          "lower": [
+            "L62-1",
+            "L62-2",
+            "L62-3",
+            "L62-4"
+          ],
+          "upper": [
+            "L62-1",
+            "L62-2",
+            "L62-3",
+            "L62-4"
+          ]
+        },
+        {
+          "tag": "062",
+          "repetition": "r2",
+          "eligibleLabels": 5,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L62-1",
+            "L62-2",
+            "L62-3",
+            "L62-4"
+          ],
+          "published": 7,
+          "dollars": 1.1720564,
+          "wallMs": 458550.255917,
+          "overlap": {
+            "intersection": 3,
+            "union": 4
+          },
+          "marginal": [
+            "L62-4"
+          ],
+          "lower": [
+            "L62-1",
+            "L62-2",
+            "L62-3",
+            "L62-4"
+          ],
+          "upper": [
+            "L62-1",
+            "L62-2",
+            "L62-3",
+            "L62-4"
+          ]
+        },
+        {
+          "tag": "064",
+          "repetition": "r1",
+          "eligibleLabels": 4,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L64-0",
+            "L64-1"
+          ],
+          "published": 6,
+          "dollars": 1.427156,
+          "wallMs": 465124.5433330005,
+          "overlap": {
+            "intersection": 2,
+            "union": 2
+          },
+          "marginal": [],
+          "lower": [
+            "L64-0",
+            "L64-1"
+          ],
+          "upper": [
+            "L64-0",
+            "L64-1"
+          ]
+        },
+        {
+          "tag": "064",
+          "repetition": "r2",
+          "eligibleLabels": 4,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L64-0",
+            "L64-1"
+          ],
+          "published": 5,
+          "dollars": 1.2494480000000001,
+          "wallMs": 507170.0402499996,
+          "overlap": {
+            "intersection": 1,
+            "union": 2
+          },
+          "marginal": [],
+          "lower": [
+            "L64-0",
+            "L64-1"
+          ],
+          "upper": [
+            "L64-0",
+            "L64-1"
+          ]
+        },
+        {
+          "tag": "074",
+          "repetition": "r1",
+          "eligibleLabels": 8,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L74-0",
+            "L74-1",
+            "L74-3"
+          ],
+          "published": 12,
+          "dollars": 1.7420404,
+          "wallMs": 1071067.2659170001,
+          "overlap": {
+            "intersection": 3,
+            "union": 3
+          },
+          "marginal": [],
+          "lower": [
+            "L74-0",
+            "L74-1",
+            "L74-3"
+          ],
+          "upper": [
+            "L74-0",
+            "L74-1",
+            "L74-3"
+          ]
+        },
+        {
+          "tag": "074",
+          "repetition": "r2",
+          "eligibleLabels": 8,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L74-0",
+            "L74-1",
+            "L74-2",
+            "L74-3"
+          ],
+          "published": 10,
+          "dollars": 1.6721876,
+          "wallMs": 919881.359959,
+          "overlap": {
+            "intersection": 4,
+            "union": 4
+          },
+          "marginal": [],
+          "lower": [
+            "L74-0",
+            "L74-1",
+            "L74-2",
+            "L74-3"
+          ],
+          "upper": [
+            "L74-0",
+            "L74-1",
+            "L74-2",
+            "L74-3"
+          ]
+        },
+        {
+          "tag": "080",
+          "repetition": "r1",
+          "eligibleLabels": 5,
+          "covered": false,
+          "partial": true,
+          "hitLabels": [
+            "L80-0",
+            "L80-1"
+          ],
+          "published": 2,
+          "dollars": null,
+          "wallMs": 283053.00175000005,
+          "overlap": {
+            "intersection": 0,
+            "union": 2
+          },
+          "marginal": [
+            "L80-0",
+            "L80-1"
+          ],
+          "lower": [
+            "L80-0",
+            "L80-1"
+          ],
+          "upper": [
+            "L80-0",
+            "L80-1"
+          ]
+        },
+        {
+          "tag": "080",
+          "repetition": "r2",
+          "eligibleLabels": 5,
+          "covered": false,
+          "partial": true,
+          "hitLabels": [
+            "L80-0",
+            "L80-1"
+          ],
+          "published": 2,
+          "dollars": null,
+          "wallMs": 271556.852416,
+          "overlap": {
+            "intersection": 0,
+            "union": 2
+          },
+          "marginal": [
+            "L80-0",
+            "L80-1"
+          ],
+          "lower": [
+            "L80-0",
+            "L80-1"
+          ],
+          "upper": [
+            "L80-0",
+            "L80-1"
+          ]
+        },
+        {
+          "tag": "086",
+          "repetition": "r1",
+          "eligibleLabels": 3,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L86-0",
+            "L86-1",
+            "L86-2"
+          ],
+          "published": 6,
+          "dollars": 1.2372516,
+          "wallMs": 1028198.0509170005,
+          "overlap": {
+            "intersection": 3,
+            "union": 3
+          },
+          "marginal": [],
+          "lower": [
+            "L86-0",
+            "L86-1",
+            "L86-2"
+          ],
+          "upper": [
+            "L86-0",
+            "L86-1",
+            "L86-2"
+          ]
+        },
+        {
+          "tag": "086",
+          "repetition": "r2",
+          "eligibleLabels": 3,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L86-0",
+            "L86-1",
+            "L86-2"
+          ],
+          "published": 6,
+          "dollars": 1.2347915999999999,
+          "wallMs": 969663.3370829988,
+          "overlap": {
+            "intersection": 3,
+            "union": 3
+          },
+          "marginal": [],
+          "lower": [
+            "L86-0",
+            "L86-1",
+            "L86-2"
+          ],
+          "upper": [
+            "L86-0",
+            "L86-1",
+            "L86-2"
+          ]
+        },
+        {
+          "tag": "088",
+          "repetition": "r1",
+          "eligibleLabels": 7,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L88-0",
+            "L88-1",
+            "L88-2",
+            "L88-3",
+            "L88-4",
+            "L88-5",
+            "L88-6"
+          ],
+          "published": 13,
+          "dollars": 1.0541688,
+          "wallMs": 1039306.926375,
+          "overlap": {
+            "intersection": 4,
+            "union": 7
+          },
+          "marginal": [
+            "L88-3"
+          ],
+          "lower": [
+            "L88-0",
+            "L88-1",
+            "L88-2",
+            "L88-3",
+            "L88-4",
+            "L88-5",
+            "L88-6"
+          ],
+          "upper": [
+            "L88-0",
+            "L88-1",
+            "L88-2",
+            "L88-3",
+            "L88-4",
+            "L88-5",
+            "L88-6"
+          ]
+        },
+        {
+          "tag": "088",
+          "repetition": "r2",
+          "eligibleLabels": 7,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L88-0",
+            "L88-1",
+            "L88-2",
+            "L88-3",
+            "L88-4",
+            "L88-5",
+            "L88-6"
+          ],
+          "published": 13,
+          "dollars": 1.283936,
+          "wallMs": 705765.194167,
+          "overlap": {
+            "intersection": 4,
+            "union": 7
+          },
+          "marginal": [
+            "L88-3"
+          ],
+          "lower": [
+            "L88-0",
+            "L88-1",
+            "L88-2",
+            "L88-3",
+            "L88-4",
+            "L88-5",
+            "L88-6"
+          ],
+          "upper": [
+            "L88-0",
+            "L88-1",
+            "L88-2",
+            "L88-3",
+            "L88-4",
+            "L88-5",
+            "L88-6"
+          ]
+        },
+        {
+          "tag": "090",
+          "repetition": "r1",
+          "eligibleLabels": 5,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L90-0",
+            "L90-1",
+            "L90-2",
+            "L90-3"
+          ],
+          "published": 10,
+          "dollars": 1.6334632,
+          "wallMs": 1348848.9119579997,
+          "overlap": {
+            "intersection": 4,
+            "union": 4
+          },
+          "marginal": [],
+          "lower": [
+            "L90-0",
+            "L90-1",
+            "L90-2",
+            "L90-3"
+          ],
+          "upper": [
+            "L90-0",
+            "L90-1",
+            "L90-2",
+            "L90-3"
+          ]
+        },
+        {
+          "tag": "090",
+          "repetition": "r2",
+          "eligibleLabels": 5,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L90-0",
+            "L90-1",
+            "L90-2",
+            "L90-3"
+          ],
+          "published": 9,
+          "dollars": 1.3752672,
+          "wallMs": 1662459.6752080005,
+          "overlap": {
+            "intersection": 4,
+            "union": 4
+          },
+          "marginal": [],
+          "lower": [
+            "L90-0",
+            "L90-1",
+            "L90-2",
+            "L90-3"
+          ],
+          "upper": [
+            "L90-0",
+            "L90-1",
+            "L90-2",
+            "L90-3"
+          ]
+        }
+      ],
+      "units": 32,
+      "covered": 30,
+      "partial": [
+        "080/r1",
+        "080/r2"
+      ],
+      "recall": {
+        "hits": 108,
+        "eligible": 188,
+        "value": 0.574468085106383,
+        "functional": {
+          "hits": 73,
+          "eligible": 104,
+          "value": 0.7019230769230769
+        },
+        "practice": {
+          "hits": 35,
+          "eligible": 84,
+          "value": 0.4166666666666667
+        }
+      },
+      "precision": {
+        "hits": 108,
+        "published": 267,
+        "value": 0.4044943820224719
+      },
+      "dollars": null,
+      "wall": {
+        "meanMs": 784618.5109283123,
+        "medianMs": 829591.7894164999
+      },
+      "overlap": {
+        "intersection": 84,
+        "union": 108
+      },
+      "marginal": 15,
+      "envelope": {
+        "lower": 108,
+        "upper": 110
+      }
+    },
+    {
+      "family": "t-sol61-xhigh∪x-musewonder-max",
+      "rows": [
+        {
+          "tag": "006",
+          "repetition": "r1",
+          "eligibleLabels": 4,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L6-0",
+            "L6-1",
+            "L6-3"
+          ],
+          "published": 24,
+          "dollars": 2.7650208,
+          "wallMs": 874211.0759579999,
+          "overlap": {
+            "intersection": 3,
+            "union": 3
+          },
+          "marginal": [],
+          "lower": [
+            "L6-0",
+            "L6-1",
+            "L6-3"
+          ],
+          "upper": [
+            "L6-0",
+            "L6-1",
+            "L6-3"
+          ]
+        },
+        {
+          "tag": "006",
+          "repetition": "r2",
+          "eligibleLabels": 4,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L6-0",
+            "L6-1",
+            "L6-3"
+          ],
+          "published": 16,
+          "dollars": 2.2892104,
+          "wallMs": 954828.3203330002,
+          "overlap": {
+            "intersection": 3,
+            "union": 3
+          },
+          "marginal": [],
+          "lower": [
+            "L6-0",
+            "L6-1",
+            "L6-3"
+          ],
+          "upper": [
+            "L6-0",
+            "L6-1",
+            "L6-3"
+          ]
+        },
+        {
+          "tag": "021",
+          "repetition": "r1",
+          "eligibleLabels": 6,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L21-0",
+            "L21-1",
+            "L21-3"
+          ],
+          "published": 8,
+          "dollars": 3.9166556000000003,
+          "wallMs": 837395.475625,
+          "overlap": {
+            "intersection": 3,
+            "union": 3
+          },
+          "marginal": [],
+          "lower": [
+            "L21-0",
+            "L21-1",
+            "L21-3"
+          ],
+          "upper": [
+            "L21-0",
+            "L21-1",
+            "L21-3"
+          ]
+        },
+        {
+          "tag": "021",
+          "repetition": "r2",
+          "eligibleLabels": 6,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L21-0",
+            "L21-1",
+            "L21-3"
+          ],
+          "published": 7,
+          "dollars": 3.2468200000000005,
+          "wallMs": 821788.1032079998,
+          "overlap": {
+            "intersection": 3,
+            "union": 3
+          },
+          "marginal": [],
+          "lower": [
+            "L21-0",
+            "L21-1",
+            "L21-3"
+          ],
+          "upper": [
+            "L21-0",
+            "L21-1",
+            "L21-3",
+            "L21-4"
+          ]
+        },
+        {
+          "tag": "028",
+          "repetition": "r1",
+          "eligibleLabels": 8,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L28-0",
+            "L28-1",
+            "L28-2",
+            "L28-3"
+          ],
+          "published": 9,
+          "dollars": 1.8265596000000002,
+          "wallMs": 625851.8426249996,
+          "overlap": {
+            "intersection": 3,
+            "union": 4
+          },
+          "marginal": [],
+          "lower": [
+            "L28-0",
+            "L28-1",
+            "L28-2",
+            "L28-3"
+          ],
+          "upper": [
+            "L28-0",
+            "L28-1",
+            "L28-2",
+            "L28-3"
+          ]
+        },
+        {
+          "tag": "028",
+          "repetition": "r2",
+          "eligibleLabels": 8,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L28-0",
+            "L28-1",
+            "L28-2",
+            "L28-3"
+          ],
+          "published": 7,
+          "dollars": 1.3066276000000001,
+          "wallMs": 655873.0344169997,
+          "overlap": {
+            "intersection": 3,
+            "union": 4
+          },
+          "marginal": [],
+          "lower": [
+            "L28-0",
+            "L28-1",
+            "L28-2",
+            "L28-3"
+          ],
+          "upper": [
+            "L28-0",
+            "L28-1",
+            "L28-2",
+            "L28-3"
+          ]
+        },
+        {
+          "tag": "037",
+          "repetition": "r1",
+          "eligibleLabels": 8,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L37-1",
+            "L37-2",
+            "L37-3",
+            "L37-4",
+            "L37-6",
+            "L37-7"
+          ],
+          "published": 19,
+          "dollars": 2.5614416,
+          "wallMs": 894471.977458,
+          "overlap": {
+            "intersection": 6,
+            "union": 6
+          },
+          "marginal": [],
+          "lower": [
+            "L37-1",
+            "L37-2",
+            "L37-3",
+            "L37-4",
+            "L37-6",
+            "L37-7"
+          ],
+          "upper": [
+            "L37-1",
+            "L37-2",
+            "L37-3",
+            "L37-4",
+            "L37-6",
+            "L37-7"
+          ]
+        },
+        {
+          "tag": "037",
+          "repetition": "r2",
+          "eligibleLabels": 8,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L37-1",
+            "L37-2",
+            "L37-3",
+            "L37-4",
+            "L37-6",
+            "L37-7"
+          ],
+          "published": 16,
+          "dollars": 2.8911548,
+          "wallMs": 711046.0923339999,
+          "overlap": {
+            "intersection": 4,
+            "union": 6
+          },
+          "marginal": [],
+          "lower": [
+            "L37-1",
+            "L37-2",
+            "L37-3",
+            "L37-4",
+            "L37-6",
+            "L37-7"
+          ],
+          "upper": [
+            "L37-1",
+            "L37-2",
+            "L37-3",
+            "L37-4",
+            "L37-6",
+            "L37-7"
+          ]
+        },
+        {
+          "tag": "041",
+          "repetition": "r1",
+          "eligibleLabels": 7,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L41-1"
+          ],
+          "published": 5,
+          "dollars": 2.9447052,
+          "wallMs": 792781.610292,
+          "overlap": {
+            "intersection": 1,
+            "union": 1
+          },
+          "marginal": [],
+          "lower": [
+            "L41-1"
+          ],
+          "upper": [
+            "L41-1"
+          ]
+        },
+        {
+          "tag": "041",
+          "repetition": "r2",
+          "eligibleLabels": 7,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L41-1"
+          ],
+          "published": 9,
+          "dollars": 2.710398,
+          "wallMs": 952380.931416,
+          "overlap": {
+            "intersection": 1,
+            "union": 1
+          },
+          "marginal": [],
+          "lower": [
+            "L41-1"
+          ],
+          "upper": [
+            "L41-1"
+          ]
+        },
+        {
+          "tag": "050",
+          "repetition": "r1",
+          "eligibleLabels": 5,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L50-0",
+            "L50-1",
+            "L50-2"
+          ],
+          "published": 8,
+          "dollars": 2.5895164,
+          "wallMs": 1058974.4817500003,
+          "overlap": {
+            "intersection": 2,
+            "union": 3
+          },
+          "marginal": [
+            "L50-0"
+          ],
+          "lower": [
+            "L50-0",
+            "L50-1",
+            "L50-2"
+          ],
+          "upper": [
+            "L50-0",
+            "L50-1",
+            "L50-2"
+          ]
+        },
+        {
+          "tag": "050",
+          "repetition": "r2",
+          "eligibleLabels": 5,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L50-0",
+            "L50-1",
+            "L50-2"
+          ],
+          "published": 8,
+          "dollars": 3.2976371999999996,
+          "wallMs": 887983.8392500002,
+          "overlap": {
+            "intersection": 2,
+            "union": 3
+          },
+          "marginal": [
+            "L50-0"
+          ],
+          "lower": [
+            "L50-0",
+            "L50-1",
+            "L50-2"
+          ],
+          "upper": [
+            "L50-0",
+            "L50-1",
+            "L50-2"
+          ]
+        },
+        {
+          "tag": "054",
+          "repetition": "r1",
+          "eligibleLabels": 9,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L54-0"
+          ],
+          "published": 3,
+          "dollars": 3.1716700000000007,
+          "wallMs": 702046.444209,
+          "overlap": {
+            "intersection": 0,
+            "union": 1
+          },
+          "marginal": [
+            "L54-0"
+          ],
+          "lower": [
+            "L54-0"
+          ],
+          "upper": [
+            "L54-0",
+            "L54-1"
+          ]
+        },
+        {
+          "tag": "054",
+          "repetition": "r2",
+          "eligibleLabels": 9,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L54-0"
+          ],
+          "published": 1,
+          "dollars": 2.3047896000000003,
+          "wallMs": 574147.1720409999,
+          "overlap": {
+            "intersection": 0,
+            "union": 1
+          },
+          "marginal": [
+            "L54-0"
+          ],
+          "lower": [
+            "L54-0"
+          ],
+          "upper": [
+            "L54-0"
+          ]
+        },
+        {
+          "tag": "055",
+          "repetition": "r1",
+          "eligibleLabels": 6,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L55-0",
+            "L55-1",
+            "L55-2",
+            "L55-3"
+          ],
+          "published": 8,
+          "dollars": 2.055236,
+          "wallMs": 568622.4060000004,
+          "overlap": {
+            "intersection": 2,
+            "union": 4
+          },
+          "marginal": [
+            "L55-0",
+            "L55-1"
+          ],
+          "lower": [
+            "L55-0",
+            "L55-1",
+            "L55-2",
+            "L55-3"
+          ],
+          "upper": [
+            "L55-0",
+            "L55-1",
+            "L55-2",
+            "L55-3"
+          ]
+        },
+        {
+          "tag": "055",
+          "repetition": "r2",
+          "eligibleLabels": 6,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L55-0",
+            "L55-1",
+            "L55-2",
+            "L55-3"
+          ],
+          "published": 6,
+          "dollars": 2.3649356,
+          "wallMs": 504179.53629199974,
+          "overlap": {
+            "intersection": 2,
+            "union": 4
+          },
+          "marginal": [
+            "L55-0",
+            "L55-1"
+          ],
+          "lower": [
+            "L55-0",
+            "L55-1",
+            "L55-2",
+            "L55-3"
+          ],
+          "upper": [
+            "L55-0",
+            "L55-1",
+            "L55-2",
+            "L55-3"
+          ]
+        },
+        {
+          "tag": "060",
+          "repetition": "r1",
+          "eligibleLabels": 4,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L60-0",
+            "L60-1",
+            "L60-2",
+            "L60-3"
+          ],
+          "published": 8,
+          "dollars": 2.4841936000000002,
+          "wallMs": 648601.3998329998,
+          "overlap": {
+            "intersection": 4,
+            "union": 4
+          },
+          "marginal": [],
+          "lower": [
+            "L60-0",
+            "L60-1",
+            "L60-2",
+            "L60-3"
+          ],
+          "upper": [
+            "L60-0",
+            "L60-1",
+            "L60-2",
+            "L60-3"
+          ]
+        },
+        {
+          "tag": "060",
+          "repetition": "r2",
+          "eligibleLabels": 4,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L60-0",
+            "L60-1",
+            "L60-2",
+            "L60-3"
+          ],
+          "published": 8,
+          "dollars": 3.1044047999999997,
+          "wallMs": 866952.3316250001,
+          "overlap": {
+            "intersection": 4,
+            "union": 4
+          },
+          "marginal": [],
+          "lower": [
+            "L60-0",
+            "L60-1",
+            "L60-2",
+            "L60-3"
+          ],
+          "upper": [
+            "L60-0",
+            "L60-1",
+            "L60-2",
+            "L60-3"
+          ]
+        },
+        {
+          "tag": "062",
+          "repetition": "r1",
+          "eligibleLabels": 5,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L62-1",
+            "L62-2",
+            "L62-3"
+          ],
+          "published": 6,
+          "dollars": 1.463292,
+          "wallMs": 535835.0916670002,
+          "overlap": {
+            "intersection": 3,
+            "union": 3
+          },
+          "marginal": [],
+          "lower": [
+            "L62-1",
+            "L62-2",
+            "L62-3"
+          ],
+          "upper": [
+            "L62-1",
+            "L62-2",
+            "L62-3"
+          ]
+        },
+        {
+          "tag": "062",
+          "repetition": "r2",
+          "eligibleLabels": 5,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L62-1",
+            "L62-2",
+            "L62-3",
+            "L62-4"
+          ],
+          "published": 7,
+          "dollars": 1.754138,
+          "wallMs": 458550.255917,
+          "overlap": {
+            "intersection": 2,
+            "union": 4
+          },
+          "marginal": [
+            "L62-4"
+          ],
+          "lower": [
+            "L62-1",
+            "L62-2",
+            "L62-3",
+            "L62-4"
+          ],
+          "upper": [
+            "L62-1",
+            "L62-2",
+            "L62-3",
+            "L62-4"
+          ]
+        },
+        {
+          "tag": "064",
+          "repetition": "r1",
+          "eligibleLabels": 4,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L64-0",
+            "L64-1"
+          ],
+          "published": 6,
+          "dollars": 1.6379480000000002,
+          "wallMs": 465124.5433330005,
+          "overlap": {
+            "intersection": 2,
+            "union": 2
+          },
+          "marginal": [],
+          "lower": [
+            "L64-0",
+            "L64-1"
+          ],
+          "upper": [
+            "L64-0",
+            "L64-1"
+          ]
+        },
+        {
+          "tag": "064",
+          "repetition": "r2",
+          "eligibleLabels": 4,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L64-0",
+            "L64-1"
+          ],
+          "published": 6,
+          "dollars": 1.9937608,
+          "wallMs": 507170.0402499996,
+          "overlap": {
+            "intersection": 2,
+            "union": 2
+          },
+          "marginal": [],
+          "lower": [
+            "L64-0",
+            "L64-1"
+          ],
+          "upper": [
+            "L64-0",
+            "L64-1"
+          ]
+        },
+        {
+          "tag": "074",
+          "repetition": "r1",
+          "eligibleLabels": 8,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L74-0",
+            "L74-1",
+            "L74-3"
+          ],
+          "published": 12,
+          "dollars": 2.5323700000000002,
+          "wallMs": 1071067.2659170001,
+          "overlap": {
+            "intersection": 3,
+            "union": 3
+          },
+          "marginal": [],
+          "lower": [
+            "L74-0",
+            "L74-1",
+            "L74-3"
+          ],
+          "upper": [
+            "L74-0",
+            "L74-1",
+            "L74-3"
+          ]
+        },
+        {
+          "tag": "074",
+          "repetition": "r2",
+          "eligibleLabels": 8,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L74-0",
+            "L74-1",
+            "L74-2",
+            "L74-3"
+          ],
+          "published": 11,
+          "dollars": 1.9517660000000001,
+          "wallMs": 919881.359959,
+          "overlap": {
+            "intersection": 2,
+            "union": 4
+          },
+          "marginal": [],
+          "lower": [
+            "L74-0",
+            "L74-1",
+            "L74-2",
+            "L74-3"
+          ],
+          "upper": [
+            "L74-0",
+            "L74-1",
+            "L74-2",
+            "L74-3"
+          ]
+        },
+        {
+          "tag": "080",
+          "repetition": "r1",
+          "eligibleLabels": 5,
+          "covered": false,
+          "partial": true,
+          "hitLabels": [
+            "L80-0",
+            "L80-1"
+          ],
+          "published": 2,
+          "dollars": null,
+          "wallMs": 348294.68266700004,
+          "overlap": {
+            "intersection": 0,
+            "union": 2
+          },
+          "marginal": [
+            "L80-0",
+            "L80-1"
+          ],
+          "lower": [
+            "L80-0",
+            "L80-1"
+          ],
+          "upper": [
+            "L80-0",
+            "L80-1"
+          ]
+        },
+        {
+          "tag": "080",
+          "repetition": "r2",
+          "eligibleLabels": 5,
+          "covered": false,
+          "partial": true,
+          "hitLabels": [
+            "L80-0",
+            "L80-1"
+          ],
+          "published": 2,
+          "dollars": null,
+          "wallMs": 343712.60116699996,
+          "overlap": {
+            "intersection": 0,
+            "union": 2
+          },
+          "marginal": [
+            "L80-0",
+            "L80-1"
+          ],
+          "lower": [
+            "L80-0",
+            "L80-1"
+          ],
+          "upper": [
+            "L80-0",
+            "L80-1"
+          ]
+        },
+        {
+          "tag": "086",
+          "repetition": "r1",
+          "eligibleLabels": 3,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L86-0",
+            "L86-1",
+            "L86-2"
+          ],
+          "published": 6,
+          "dollars": 1.3237444,
+          "wallMs": 1028198.0509170005,
+          "overlap": {
+            "intersection": 3,
+            "union": 3
+          },
+          "marginal": [],
+          "lower": [
+            "L86-0",
+            "L86-1",
+            "L86-2"
+          ],
+          "upper": [
+            "L86-0",
+            "L86-1",
+            "L86-2"
+          ]
+        },
+        {
+          "tag": "086",
+          "repetition": "r2",
+          "eligibleLabels": 3,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L86-0",
+            "L86-1",
+            "L86-2"
+          ],
+          "published": 6,
+          "dollars": 1.3546812,
+          "wallMs": 969663.3370829988,
+          "overlap": {
+            "intersection": 3,
+            "union": 3
+          },
+          "marginal": [],
+          "lower": [
+            "L86-0",
+            "L86-1",
+            "L86-2"
+          ],
+          "upper": [
+            "L86-0",
+            "L86-1",
+            "L86-2"
+          ]
+        },
+        {
+          "tag": "088",
+          "repetition": "r1",
+          "eligibleLabels": 7,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L88-0",
+            "L88-1",
+            "L88-2",
+            "L88-3",
+            "L88-4",
+            "L88-5",
+            "L88-6"
+          ],
+          "published": 11,
+          "dollars": 1.145028,
+          "wallMs": 1039306.926375,
+          "overlap": {
+            "intersection": 3,
+            "union": 7
+          },
+          "marginal": [
+            "L88-3"
+          ],
+          "lower": [
+            "L88-0",
+            "L88-1",
+            "L88-2",
+            "L88-3",
+            "L88-4",
+            "L88-5",
+            "L88-6"
+          ],
+          "upper": [
+            "L88-0",
+            "L88-1",
+            "L88-2",
+            "L88-3",
+            "L88-4",
+            "L88-5",
+            "L88-6"
+          ]
+        },
+        {
+          "tag": "088",
+          "repetition": "r2",
+          "eligibleLabels": 7,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L88-0",
+            "L88-1",
+            "L88-2",
+            "L88-3",
+            "L88-4",
+            "L88-5",
+            "L88-6"
+          ],
+          "published": 13,
+          "dollars": 1.2697479999999999,
+          "wallMs": 705765.194167,
+          "overlap": {
+            "intersection": 4,
+            "union": 7
+          },
+          "marginal": [
+            "L88-3"
+          ],
+          "lower": [
+            "L88-0",
+            "L88-1",
+            "L88-2",
+            "L88-3",
+            "L88-4",
+            "L88-5",
+            "L88-6"
+          ],
+          "upper": [
+            "L88-0",
+            "L88-1",
+            "L88-2",
+            "L88-3",
+            "L88-4",
+            "L88-5",
+            "L88-6"
+          ]
+        },
+        {
+          "tag": "090",
+          "repetition": "r1",
+          "eligibleLabels": 5,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L90-0",
+            "L90-1",
+            "L90-2",
+            "L90-3"
+          ],
+          "published": 10,
+          "dollars": 1.8097623999999999,
+          "wallMs": 1348848.9119579997,
+          "overlap": {
+            "intersection": 4,
+            "union": 4
+          },
+          "marginal": [],
+          "lower": [
+            "L90-0",
+            "L90-1",
+            "L90-2",
+            "L90-3"
+          ],
+          "upper": [
+            "L90-0",
+            "L90-1",
+            "L90-2",
+            "L90-3"
+          ]
+        },
+        {
+          "tag": "090",
+          "repetition": "r2",
+          "eligibleLabels": 5,
+          "covered": true,
+          "partial": false,
+          "hitLabels": [
+            "L90-0",
+            "L90-1",
+            "L90-2",
+            "L90-3"
+          ],
+          "published": 9,
+          "dollars": 1.9059928,
+          "wallMs": 1662459.6752080005,
+          "overlap": {
+            "intersection": 4,
+            "union": 4
+          },
+          "marginal": [],
+          "lower": [
+            "L90-0",
+            "L90-1",
+            "L90-2",
+            "L90-3"
+          ],
+          "upper": [
+            "L90-0",
+            "L90-1",
+            "L90-2",
+            "L90-3"
+          ]
+        }
+      ],
+      "units": 32,
+      "covered": 30,
+      "partial": [
+        "080/r1",
+        "080/r2"
+      ],
+      "recall": {
+        "hits": 108,
+        "eligible": 188,
+        "value": 0.574468085106383,
+        "functional": {
+          "hits": 73,
+          "eligible": 104,
+          "value": 0.7019230769230769
+        },
+        "practice": {
+          "hits": 35,
+          "eligible": 84,
+          "value": 0.4166666666666667
+        }
+      },
+      "precision": {
+        "hits": 108,
+        "published": 277,
+        "value": 0.3898916967509025
+      },
+      "dollars": null,
+      "wall": {
+        "meanMs": 791750.4378515936,
+        "medianMs": 807284.8567499999
+      },
+      "overlap": {
+        "intersection": 81,
+        "union": 108
+      },
+      "marginal": 15,
+      "envelope": {
+        "lower": 108,
+        "upper": 110
+      }
+    }
+  ],
+  "control": {
+    "family": "t-sol61-xhigh∪t-sol61-xhigh'",
+    "rows": [
+      {
+        "tag": "006",
+        "repetition": "r1",
+        "eligibleLabels": 4,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L6-0",
+          "L6-1",
+          "L6-3"
+        ],
+        "published": 24,
+        "dollars": 1.6455424,
+        "wallMs": 954828.3203330002,
+        "overlap": {
+          "intersection": 3,
+          "union": 3
+        },
+        "marginal": [],
+        "lower": [
+          "L6-0",
+          "L6-1",
+          "L6-3"
+        ],
+        "upper": [
+          "L6-0",
+          "L6-1",
+          "L6-3"
+        ]
+      },
+      {
+        "tag": "006",
+        "repetition": "r2",
+        "eligibleLabels": 4,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L6-0",
+          "L6-1",
+          "L6-3"
+        ],
+        "published": 24,
+        "dollars": 1.6455424,
+        "wallMs": 954828.3203330002,
+        "overlap": {
+          "intersection": 3,
+          "union": 3
+        },
+        "marginal": [],
+        "lower": [
+          "L6-0",
+          "L6-1",
+          "L6-3"
+        ],
+        "upper": [
+          "L6-0",
+          "L6-1",
+          "L6-3"
+        ]
+      },
+      {
+        "tag": "021",
+        "repetition": "r1",
+        "eligibleLabels": 6,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L21-0",
+          "L21-1",
+          "L21-3"
+        ],
+        "published": 7,
+        "dollars": 2.532122,
+        "wallMs": 837395.475625,
+        "overlap": {
+          "intersection": 3,
+          "union": 3
+        },
+        "marginal": [],
+        "lower": [
+          "L21-0",
+          "L21-1",
+          "L21-3"
+        ],
+        "upper": [
+          "L21-0",
+          "L21-1",
+          "L21-3",
+          "L21-4"
+        ]
+      },
+      {
+        "tag": "021",
+        "repetition": "r2",
+        "eligibleLabels": 6,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L21-0",
+          "L21-1",
+          "L21-3"
+        ],
+        "published": 7,
+        "dollars": 2.532122,
+        "wallMs": 837395.475625,
+        "overlap": {
+          "intersection": 3,
+          "union": 3
+        },
+        "marginal": [],
+        "lower": [
+          "L21-0",
+          "L21-1",
+          "L21-3"
+        ],
+        "upper": [
+          "L21-0",
+          "L21-1",
+          "L21-3",
+          "L21-4"
+        ]
+      },
+      {
+        "tag": "028",
+        "repetition": "r1",
+        "eligibleLabels": 8,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L28-0",
+          "L28-1",
+          "L28-2",
+          "L28-3"
+        ],
+        "published": 9,
+        "dollars": 1.4192144,
+        "wallMs": 655873.0344169997,
+        "overlap": {
+          "intersection": 4,
+          "union": 4
+        },
+        "marginal": [],
+        "lower": [
+          "L28-0",
+          "L28-1",
+          "L28-2",
+          "L28-3"
+        ],
+        "upper": [
+          "L28-0",
+          "L28-1",
+          "L28-2",
+          "L28-3"
+        ]
+      },
+      {
+        "tag": "028",
+        "repetition": "r2",
+        "eligibleLabels": 8,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L28-0",
+          "L28-1",
+          "L28-2",
+          "L28-3"
+        ],
+        "published": 9,
+        "dollars": 1.4192144,
+        "wallMs": 655873.0344169997,
+        "overlap": {
+          "intersection": 4,
+          "union": 4
+        },
+        "marginal": [],
+        "lower": [
+          "L28-0",
+          "L28-1",
+          "L28-2",
+          "L28-3"
+        ],
+        "upper": [
+          "L28-0",
+          "L28-1",
+          "L28-2",
+          "L28-3"
+        ]
+      },
+      {
+        "tag": "037",
+        "repetition": "r1",
+        "eligibleLabels": 8,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L37-1",
+          "L37-2",
+          "L37-3",
+          "L37-4",
+          "L37-6",
+          "L37-7"
+        ],
+        "published": 23,
+        "dollars": 1.5618316,
+        "wallMs": 894471.977458,
+        "overlap": {
+          "intersection": 6,
+          "union": 6
+        },
+        "marginal": [],
+        "lower": [
+          "L37-1",
+          "L37-2",
+          "L37-3",
+          "L37-4",
+          "L37-6",
+          "L37-7"
+        ],
+        "upper": [
+          "L37-1",
+          "L37-2",
+          "L37-3",
+          "L37-4",
+          "L37-6",
+          "L37-7"
+        ]
+      },
+      {
+        "tag": "037",
+        "repetition": "r2",
+        "eligibleLabels": 8,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L37-1",
+          "L37-2",
+          "L37-3",
+          "L37-4",
+          "L37-6",
+          "L37-7"
+        ],
+        "published": 23,
+        "dollars": 1.5618316,
+        "wallMs": 894471.977458,
+        "overlap": {
+          "intersection": 6,
+          "union": 6
+        },
+        "marginal": [],
+        "lower": [
+          "L37-1",
+          "L37-2",
+          "L37-3",
+          "L37-4",
+          "L37-6",
+          "L37-7"
+        ],
+        "upper": [
+          "L37-1",
+          "L37-2",
+          "L37-3",
+          "L37-4",
+          "L37-6",
+          "L37-7"
+        ]
+      },
+      {
+        "tag": "041",
+        "repetition": "r1",
+        "eligibleLabels": 7,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L41-1"
+        ],
+        "published": 10,
+        "dollars": 1.2126256,
+        "wallMs": 921328.040666,
+        "overlap": {
+          "intersection": 1,
+          "union": 1
+        },
+        "marginal": [],
+        "lower": [
+          "L41-1"
+        ],
+        "upper": [
+          "L41-1"
+        ]
+      },
+      {
+        "tag": "041",
+        "repetition": "r2",
+        "eligibleLabels": 7,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L41-1"
+        ],
+        "published": 10,
+        "dollars": 1.2126256,
+        "wallMs": 921328.040666,
+        "overlap": {
+          "intersection": 1,
+          "union": 1
+        },
+        "marginal": [],
+        "lower": [
+          "L41-1"
+        ],
+        "upper": [
+          "L41-1"
+        ]
+      },
+      {
+        "tag": "050",
+        "repetition": "r1",
+        "eligibleLabels": 5,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L50-1",
+          "L50-2"
+        ],
+        "published": 8,
+        "dollars": 2.8434824,
+        "wallMs": 1058974.4817500003,
+        "overlap": {
+          "intersection": 2,
+          "union": 2
+        },
+        "marginal": [],
+        "lower": [
+          "L50-1",
+          "L50-2"
+        ],
+        "upper": [
+          "L50-1",
+          "L50-2"
+        ]
+      },
+      {
+        "tag": "050",
+        "repetition": "r2",
+        "eligibleLabels": 5,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L50-1",
+          "L50-2"
+        ],
+        "published": 8,
+        "dollars": 2.8434824,
+        "wallMs": 1058974.4817500003,
+        "overlap": {
+          "intersection": 2,
+          "union": 2
+        },
+        "marginal": [],
+        "lower": [
+          "L50-1",
+          "L50-2"
+        ],
+        "upper": [
+          "L50-1",
+          "L50-2"
+        ]
+      },
+      {
+        "tag": "054",
+        "repetition": "r1",
+        "eligibleLabels": 9,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [],
+        "published": 0,
+        "dollars": 1.4376812,
+        "wallMs": 574147.1720409999,
+        "overlap": {
+          "intersection": 0,
+          "union": 0
+        },
+        "marginal": [],
+        "lower": [],
+        "upper": []
+      },
+      {
+        "tag": "054",
+        "repetition": "r2",
+        "eligibleLabels": 9,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [],
+        "published": 0,
+        "dollars": 1.4376812,
+        "wallMs": 574147.1720409999,
+        "overlap": {
+          "intersection": 0,
+          "union": 0
+        },
+        "marginal": [],
+        "lower": [],
+        "upper": []
+      },
+      {
+        "tag": "055",
+        "repetition": "r1",
+        "eligibleLabels": 6,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L55-2",
+          "L55-3"
+        ],
+        "published": 4,
+        "dollars": 1.540426,
+        "wallMs": 568622.4060000004,
+        "overlap": {
+          "intersection": 2,
+          "union": 2
+        },
+        "marginal": [],
+        "lower": [
+          "L55-2",
+          "L55-3"
+        ],
+        "upper": [
+          "L55-2",
+          "L55-3"
+        ]
+      },
+      {
+        "tag": "055",
+        "repetition": "r2",
+        "eligibleLabels": 6,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L55-2",
+          "L55-3"
+        ],
+        "published": 4,
+        "dollars": 1.540426,
+        "wallMs": 568622.4060000004,
+        "overlap": {
+          "intersection": 2,
+          "union": 2
+        },
+        "marginal": [],
+        "lower": [
+          "L55-2",
+          "L55-3"
+        ],
+        "upper": [
+          "L55-2",
+          "L55-3"
+        ]
+      },
+      {
+        "tag": "060",
+        "repetition": "r1",
+        "eligibleLabels": 4,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L60-0",
+          "L60-1",
+          "L60-2",
+          "L60-3"
+        ],
+        "published": 8,
+        "dollars": 2.8580824,
+        "wallMs": 866952.3316250001,
+        "overlap": {
+          "intersection": 4,
+          "union": 4
+        },
+        "marginal": [],
+        "lower": [
+          "L60-0",
+          "L60-1",
+          "L60-2",
+          "L60-3"
+        ],
+        "upper": [
+          "L60-0",
+          "L60-1",
+          "L60-2",
+          "L60-3"
+        ]
+      },
+      {
+        "tag": "060",
+        "repetition": "r2",
+        "eligibleLabels": 4,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L60-0",
+          "L60-1",
+          "L60-2",
+          "L60-3"
+        ],
+        "published": 8,
+        "dollars": 2.8580824,
+        "wallMs": 866952.3316250001,
+        "overlap": {
+          "intersection": 4,
+          "union": 4
+        },
+        "marginal": [],
+        "lower": [
+          "L60-0",
+          "L60-1",
+          "L60-2",
+          "L60-3"
+        ],
+        "upper": [
+          "L60-0",
+          "L60-1",
+          "L60-2",
+          "L60-3"
+        ]
+      },
+      {
+        "tag": "062",
+        "repetition": "r1",
+        "eligibleLabels": 5,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L62-1",
+          "L62-2",
+          "L62-3"
+        ],
+        "published": 6,
+        "dollars": 1.4522124,
+        "wallMs": 535835.0916670002,
+        "overlap": {
+          "intersection": 3,
+          "union": 3
+        },
+        "marginal": [],
+        "lower": [
+          "L62-1",
+          "L62-2",
+          "L62-3"
+        ],
+        "upper": [
+          "L62-1",
+          "L62-2",
+          "L62-3"
+        ]
+      },
+      {
+        "tag": "062",
+        "repetition": "r2",
+        "eligibleLabels": 5,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L62-1",
+          "L62-2",
+          "L62-3"
+        ],
+        "published": 6,
+        "dollars": 1.4522124,
+        "wallMs": 535835.0916670002,
+        "overlap": {
+          "intersection": 3,
+          "union": 3
+        },
+        "marginal": [],
+        "lower": [
+          "L62-1",
+          "L62-2",
+          "L62-3"
+        ],
+        "upper": [
+          "L62-1",
+          "L62-2",
+          "L62-3"
+        ]
+      },
+      {
+        "tag": "064",
+        "repetition": "r1",
+        "eligibleLabels": 4,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L64-0",
+          "L64-1"
+        ],
+        "published": 6,
+        "dollars": 1.2382232,
+        "wallMs": 507170.0402499996,
+        "overlap": {
+          "intersection": 2,
+          "union": 2
+        },
+        "marginal": [],
+        "lower": [
+          "L64-0",
+          "L64-1"
+        ],
+        "upper": [
+          "L64-0",
+          "L64-1"
+        ]
+      },
+      {
+        "tag": "064",
+        "repetition": "r2",
+        "eligibleLabels": 4,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L64-0",
+          "L64-1"
+        ],
+        "published": 6,
+        "dollars": 1.2382232,
+        "wallMs": 507170.0402499996,
+        "overlap": {
+          "intersection": 2,
+          "union": 2
+        },
+        "marginal": [],
+        "lower": [
+          "L64-0",
+          "L64-1"
+        ],
+        "upper": [
+          "L64-0",
+          "L64-1"
+        ]
+      },
+      {
+        "tag": "074",
+        "repetition": "r1",
+        "eligibleLabels": 8,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L74-0",
+          "L74-1",
+          "L74-2",
+          "L74-3"
+        ],
+        "published": 13,
+        "dollars": 1.5855576,
+        "wallMs": 1071067.2659170001,
+        "overlap": {
+          "intersection": 3,
+          "union": 4
+        },
+        "marginal": [
+          "L74-2"
+        ],
+        "lower": [
+          "L74-0",
+          "L74-1",
+          "L74-2",
+          "L74-3"
+        ],
+        "upper": [
+          "L74-0",
+          "L74-1",
+          "L74-2",
+          "L74-3"
+        ]
+      },
+      {
+        "tag": "074",
+        "repetition": "r2",
+        "eligibleLabels": 8,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L74-0",
+          "L74-1",
+          "L74-2",
+          "L74-3"
+        ],
+        "published": 13,
+        "dollars": 1.5855576,
+        "wallMs": 1071067.2659170001,
+        "overlap": {
+          "intersection": 3,
+          "union": 4
+        },
+        "marginal": [],
+        "lower": [
+          "L74-0",
+          "L74-1",
+          "L74-2",
+          "L74-3"
+        ],
+        "upper": [
+          "L74-0",
+          "L74-1",
+          "L74-2",
+          "L74-3"
+        ]
+      },
+      {
+        "tag": "080",
+        "repetition": "r1",
+        "eligibleLabels": 5,
+        "covered": false,
+        "partial": false,
+        "hitLabels": [],
+        "published": 0,
+        "dollars": null,
+        "wallMs": null,
+        "overlap": {
+          "intersection": 0,
+          "union": 0
+        },
+        "marginal": [],
+        "lower": [],
+        "upper": []
+      },
+      {
+        "tag": "080",
+        "repetition": "r2",
+        "eligibleLabels": 5,
+        "covered": false,
+        "partial": false,
+        "hitLabels": [],
+        "published": 0,
+        "dollars": null,
+        "wallMs": null,
+        "overlap": {
+          "intersection": 0,
+          "union": 0
+        },
+        "marginal": [],
+        "lower": [],
+        "upper": []
+      },
+      {
+        "tag": "086",
+        "repetition": "r1",
+        "eligibleLabels": 3,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L86-0",
+          "L86-1",
+          "L86-2"
+        ],
+        "published": 6,
+        "dollars": 1.3449360000000001,
+        "wallMs": 1028198.0509170005,
+        "overlap": {
+          "intersection": 3,
+          "union": 3
+        },
+        "marginal": [],
+        "lower": [
+          "L86-0",
+          "L86-1",
+          "L86-2"
+        ],
+        "upper": [
+          "L86-0",
+          "L86-1",
+          "L86-2"
+        ]
+      },
+      {
+        "tag": "086",
+        "repetition": "r2",
+        "eligibleLabels": 3,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L86-0",
+          "L86-1",
+          "L86-2"
+        ],
+        "published": 6,
+        "dollars": 1.3449360000000001,
+        "wallMs": 1028198.0509170005,
+        "overlap": {
+          "intersection": 3,
+          "union": 3
+        },
+        "marginal": [],
+        "lower": [
+          "L86-0",
+          "L86-1",
+          "L86-2"
+        ],
+        "upper": [
+          "L86-0",
+          "L86-1",
+          "L86-2"
+        ]
+      },
+      {
+        "tag": "088",
+        "repetition": "r1",
+        "eligibleLabels": 7,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L88-0",
+          "L88-1",
+          "L88-2",
+          "L88-4",
+          "L88-5",
+          "L88-6"
+        ],
+        "published": 14,
+        "dollars": 0.7862439999999999,
+        "wallMs": 1039306.926375,
+        "overlap": {
+          "intersection": 6,
+          "union": 6
+        },
+        "marginal": [],
+        "lower": [
+          "L88-0",
+          "L88-1",
+          "L88-2",
+          "L88-4",
+          "L88-5",
+          "L88-6"
+        ],
+        "upper": [
+          "L88-0",
+          "L88-1",
+          "L88-2",
+          "L88-4",
+          "L88-5",
+          "L88-6"
+        ]
+      },
+      {
+        "tag": "088",
+        "repetition": "r2",
+        "eligibleLabels": 7,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L88-0",
+          "L88-1",
+          "L88-2",
+          "L88-4",
+          "L88-5",
+          "L88-6"
+        ],
+        "published": 14,
+        "dollars": 0.7862439999999999,
+        "wallMs": 1039306.926375,
+        "overlap": {
+          "intersection": 6,
+          "union": 6
+        },
+        "marginal": [],
+        "lower": [
+          "L88-0",
+          "L88-1",
+          "L88-2",
+          "L88-4",
+          "L88-5",
+          "L88-6"
+        ],
+        "upper": [
+          "L88-0",
+          "L88-1",
+          "L88-2",
+          "L88-4",
+          "L88-5",
+          "L88-6"
+        ]
+      },
+      {
+        "tag": "090",
+        "repetition": "r1",
+        "eligibleLabels": 5,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L90-0",
+          "L90-1",
+          "L90-2",
+          "L90-3"
+        ],
+        "published": 10,
+        "dollars": 1.4087912,
+        "wallMs": 1662459.6752080005,
+        "overlap": {
+          "intersection": 4,
+          "union": 4
+        },
+        "marginal": [],
+        "lower": [
+          "L90-0",
+          "L90-1",
+          "L90-2",
+          "L90-3"
+        ],
+        "upper": [
+          "L90-0",
+          "L90-1",
+          "L90-2",
+          "L90-3"
+        ]
+      },
+      {
+        "tag": "090",
+        "repetition": "r2",
+        "eligibleLabels": 5,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L90-0",
+          "L90-1",
+          "L90-2",
+          "L90-3"
+        ],
+        "published": 10,
+        "dollars": 1.4087912,
+        "wallMs": 1662459.6752080005,
+        "overlap": {
+          "intersection": 4,
+          "union": 4
+        },
+        "marginal": [],
+        "lower": [
+          "L90-0",
+          "L90-1",
+          "L90-2",
+          "L90-3"
+        ],
+        "upper": [
+          "L90-0",
+          "L90-1",
+          "L90-2",
+          "L90-3"
+        ]
+      }
+    ],
+    "units": 32,
+    "covered": 30,
+    "partial": [],
+    "recall": {
+      "hits": 94,
+      "eligible": 188,
+      "value": 0.5,
+      "functional": {
+        "hits": 68,
+        "eligible": 104,
+        "value": 0.6538461538461539
+      },
+      "practice": {
+        "hits": 26,
+        "eligible": 84,
+        "value": 0.30952380952380953
+      }
+    },
+    "precision": {
+      "hits": 94,
+      "published": 296,
+      "value": 0.31756756756756754
+    },
+    "dollars": null,
+    "wall": {
+      "meanMs": 878442.0193499334,
+      "medianMs": 894471.977458
+    },
+    "overlap": {
+      "intersection": 92,
+      "union": 94
+    },
+    "marginal": 1,
+    "envelope": {
+      "lower": 94,
+      "upper": 96
+    }
+  },
+  "alone": {
+    "family": "t-sol61-xhigh",
+    "rows": [
+      {
+        "tag": "006",
+        "repetition": "r1",
+        "eligibleLabels": 4,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L6-0",
+          "L6-1",
+          "L6-3"
+        ],
+        "published": 12,
+        "dollars": 0.8335224,
+        "wallMs": 874211.0759579999,
+        "overlap": {
+          "intersection": 0,
+          "union": 3
+        },
+        "marginal": [],
+        "lower": [
+          "L6-0",
+          "L6-1",
+          "L6-3"
+        ],
+        "upper": [
+          "L6-0",
+          "L6-1",
+          "L6-3"
+        ]
+      },
+      {
+        "tag": "006",
+        "repetition": "r2",
+        "eligibleLabels": 4,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L6-0",
+          "L6-1",
+          "L6-3"
+        ],
+        "published": 12,
+        "dollars": 0.81202,
+        "wallMs": 954828.3203330002,
+        "overlap": {
+          "intersection": 0,
+          "union": 3
+        },
+        "marginal": [],
+        "lower": [
+          "L6-0",
+          "L6-1",
+          "L6-3"
+        ],
+        "upper": [
+          "L6-0",
+          "L6-1",
+          "L6-3"
+        ]
+      },
+      {
+        "tag": "021",
+        "repetition": "r1",
+        "eligibleLabels": 6,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L21-0",
+          "L21-1",
+          "L21-3"
+        ],
+        "published": 4,
+        "dollars": 1.2631692,
+        "wallMs": 837395.475625,
+        "overlap": {
+          "intersection": 0,
+          "union": 3
+        },
+        "marginal": [],
+        "lower": [
+          "L21-0",
+          "L21-1",
+          "L21-3"
+        ],
+        "upper": [
+          "L21-0",
+          "L21-1",
+          "L21-3"
+        ]
+      },
+      {
+        "tag": "021",
+        "repetition": "r2",
+        "eligibleLabels": 6,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L21-0",
+          "L21-1",
+          "L21-3"
+        ],
+        "published": 3,
+        "dollars": 1.2689528,
+        "wallMs": 821788.1032079998,
+        "overlap": {
+          "intersection": 0,
+          "union": 3
+        },
+        "marginal": [],
+        "lower": [
+          "L21-0",
+          "L21-1",
+          "L21-3"
+        ],
+        "upper": [
+          "L21-0",
+          "L21-1",
+          "L21-3",
+          "L21-4"
+        ]
+      },
+      {
+        "tag": "028",
+        "repetition": "r1",
+        "eligibleLabels": 8,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L28-0",
+          "L28-1",
+          "L28-2",
+          "L28-3"
+        ],
+        "published": 5,
+        "dollars": 0.8457148000000001,
+        "wallMs": 625851.8426249996,
+        "overlap": {
+          "intersection": 0,
+          "union": 4
+        },
+        "marginal": [],
+        "lower": [
+          "L28-0",
+          "L28-1",
+          "L28-2",
+          "L28-3"
+        ],
+        "upper": [
+          "L28-0",
+          "L28-1",
+          "L28-2",
+          "L28-3"
+        ]
+      },
+      {
+        "tag": "028",
+        "repetition": "r2",
+        "eligibleLabels": 8,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L28-0",
+          "L28-1",
+          "L28-2",
+          "L28-3"
+        ],
+        "published": 4,
+        "dollars": 0.5734996,
+        "wallMs": 655873.0344169997,
+        "overlap": {
+          "intersection": 0,
+          "union": 4
+        },
+        "marginal": [],
+        "lower": [
+          "L28-0",
+          "L28-1",
+          "L28-2",
+          "L28-3"
+        ],
+        "upper": [
+          "L28-0",
+          "L28-1",
+          "L28-2",
+          "L28-3"
+        ]
+      },
+      {
+        "tag": "037",
+        "repetition": "r1",
+        "eligibleLabels": 8,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L37-1",
+          "L37-2",
+          "L37-3",
+          "L37-4",
+          "L37-6",
+          "L37-7"
+        ],
+        "published": 12,
+        "dollars": 0.8509344,
+        "wallMs": 894471.977458,
+        "overlap": {
+          "intersection": 0,
+          "union": 6
+        },
+        "marginal": [],
+        "lower": [
+          "L37-1",
+          "L37-2",
+          "L37-3",
+          "L37-4",
+          "L37-6",
+          "L37-7"
+        ],
+        "upper": [
+          "L37-1",
+          "L37-2",
+          "L37-3",
+          "L37-4",
+          "L37-6",
+          "L37-7"
+        ]
+      },
+      {
+        "tag": "037",
+        "repetition": "r2",
+        "eligibleLabels": 8,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L37-1",
+          "L37-2",
+          "L37-3",
+          "L37-4",
+          "L37-6",
+          "L37-7"
+        ],
+        "published": 11,
+        "dollars": 0.7108972,
+        "wallMs": 711046.0923339999,
+        "overlap": {
+          "intersection": 0,
+          "union": 6
+        },
+        "marginal": [],
+        "lower": [
+          "L37-1",
+          "L37-2",
+          "L37-3",
+          "L37-4",
+          "L37-6",
+          "L37-7"
+        ],
+        "upper": [
+          "L37-1",
+          "L37-2",
+          "L37-3",
+          "L37-4",
+          "L37-6",
+          "L37-7"
+        ]
+      },
+      {
+        "tag": "041",
+        "repetition": "r1",
+        "eligibleLabels": 7,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L41-1"
+        ],
+        "published": 4,
+        "dollars": 0.6391676,
+        "wallMs": 758199.5885,
+        "overlap": {
+          "intersection": 0,
+          "union": 1
+        },
+        "marginal": [],
+        "lower": [
+          "L41-1"
+        ],
+        "upper": [
+          "L41-1"
+        ]
+      },
+      {
+        "tag": "041",
+        "repetition": "r2",
+        "eligibleLabels": 7,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L41-1"
+        ],
+        "published": 6,
+        "dollars": 0.573458,
+        "wallMs": 921328.040666,
+        "overlap": {
+          "intersection": 0,
+          "union": 1
+        },
+        "marginal": [],
+        "lower": [
+          "L41-1"
+        ],
+        "upper": [
+          "L41-1"
+        ]
+      },
+      {
+        "tag": "050",
+        "repetition": "r1",
+        "eligibleLabels": 5,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L50-1",
+          "L50-2"
+        ],
+        "published": 4,
+        "dollars": 1.52013,
+        "wallMs": 1058974.4817500003,
+        "overlap": {
+          "intersection": 0,
+          "union": 2
+        },
+        "marginal": [],
+        "lower": [
+          "L50-1",
+          "L50-2"
+        ],
+        "upper": [
+          "L50-1",
+          "L50-2"
+        ]
+      },
+      {
+        "tag": "050",
+        "repetition": "r2",
+        "eligibleLabels": 5,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L50-1",
+          "L50-2"
+        ],
+        "published": 4,
+        "dollars": 1.3233523999999999,
+        "wallMs": 887983.8392500002,
+        "overlap": {
+          "intersection": 0,
+          "union": 2
+        },
+        "marginal": [],
+        "lower": [
+          "L50-1",
+          "L50-2"
+        ],
+        "upper": [
+          "L50-1",
+          "L50-2"
+        ]
+      },
+      {
+        "tag": "054",
+        "repetition": "r1",
+        "eligibleLabels": 9,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [],
+        "published": 0,
+        "dollars": 0.6663836,
+        "wallMs": 539658.5220409995,
+        "overlap": {
+          "intersection": 0,
+          "union": 0
+        },
+        "marginal": [],
+        "lower": [],
+        "upper": []
+      },
+      {
+        "tag": "054",
+        "repetition": "r2",
+        "eligibleLabels": 9,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [],
+        "published": 0,
+        "dollars": 0.7712976,
+        "wallMs": 574147.1720409999,
+        "overlap": {
+          "intersection": 0,
+          "union": 0
+        },
+        "marginal": [],
+        "lower": [],
+        "upper": []
+      },
+      {
+        "tag": "055",
+        "repetition": "r1",
+        "eligibleLabels": 6,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L55-2",
+          "L55-3"
+        ],
+        "published": 2,
+        "dollars": 0.7584288,
+        "wallMs": 568622.4060000004,
+        "overlap": {
+          "intersection": 0,
+          "union": 2
+        },
+        "marginal": [],
+        "lower": [
+          "L55-2",
+          "L55-3"
+        ],
+        "upper": [
+          "L55-2",
+          "L55-3"
+        ]
+      },
+      {
+        "tag": "055",
+        "repetition": "r2",
+        "eligibleLabels": 6,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L55-2",
+          "L55-3"
+        ],
+        "published": 2,
+        "dollars": 0.7819972,
+        "wallMs": 504179.53629199974,
+        "overlap": {
+          "intersection": 0,
+          "union": 2
+        },
+        "marginal": [],
+        "lower": [
+          "L55-2",
+          "L55-3"
+        ],
+        "upper": [
+          "L55-2",
+          "L55-3"
+        ]
+      },
+      {
+        "tag": "060",
+        "repetition": "r1",
+        "eligibleLabels": 4,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L60-0",
+          "L60-1",
+          "L60-2",
+          "L60-3"
+        ],
+        "published": 4,
+        "dollars": 1.334016,
+        "wallMs": 648601.3998329998,
+        "overlap": {
+          "intersection": 0,
+          "union": 4
+        },
+        "marginal": [],
+        "lower": [
+          "L60-0",
+          "L60-1",
+          "L60-2",
+          "L60-3"
+        ],
+        "upper": [
+          "L60-0",
+          "L60-1",
+          "L60-2",
+          "L60-3"
+        ]
+      },
+      {
+        "tag": "060",
+        "repetition": "r2",
+        "eligibleLabels": 4,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L60-0",
+          "L60-1",
+          "L60-2",
+          "L60-3"
+        ],
+        "published": 4,
+        "dollars": 1.5240664,
+        "wallMs": 866952.3316250001,
+        "overlap": {
+          "intersection": 0,
+          "union": 4
+        },
+        "marginal": [],
+        "lower": [
+          "L60-0",
+          "L60-1",
+          "L60-2",
+          "L60-3"
+        ],
+        "upper": [
+          "L60-0",
+          "L60-1",
+          "L60-2",
+          "L60-3"
+        ]
+      },
+      {
+        "tag": "062",
+        "repetition": "r1",
+        "eligibleLabels": 5,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L62-1",
+          "L62-2",
+          "L62-3"
+        ],
+        "published": 3,
+        "dollars": 0.7470384,
+        "wallMs": 535835.0916670002,
+        "overlap": {
+          "intersection": 0,
+          "union": 3
+        },
+        "marginal": [],
+        "lower": [
+          "L62-1",
+          "L62-2",
+          "L62-3"
+        ],
+        "upper": [
+          "L62-1",
+          "L62-2",
+          "L62-3"
+        ]
+      },
+      {
+        "tag": "062",
+        "repetition": "r2",
+        "eligibleLabels": 5,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L62-1",
+          "L62-2",
+          "L62-3"
+        ],
+        "published": 3,
+        "dollars": 0.705174,
+        "wallMs": 458550.255917,
+        "overlap": {
+          "intersection": 0,
+          "union": 3
+        },
+        "marginal": [],
+        "lower": [
+          "L62-1",
+          "L62-2",
+          "L62-3"
+        ],
+        "upper": [
+          "L62-1",
+          "L62-2",
+          "L62-3"
+        ]
+      },
+      {
+        "tag": "064",
+        "repetition": "r1",
+        "eligibleLabels": 4,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L64-0",
+          "L64-1"
+        ],
+        "published": 3,
+        "dollars": 0.585576,
+        "wallMs": 465124.5433330005,
+        "overlap": {
+          "intersection": 0,
+          "union": 2
+        },
+        "marginal": [],
+        "lower": [
+          "L64-0",
+          "L64-1"
+        ],
+        "upper": [
+          "L64-0",
+          "L64-1"
+        ]
+      },
+      {
+        "tag": "064",
+        "repetition": "r2",
+        "eligibleLabels": 4,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L64-0",
+          "L64-1"
+        ],
+        "published": 3,
+        "dollars": 0.6526472,
+        "wallMs": 507170.0402499996,
+        "overlap": {
+          "intersection": 0,
+          "union": 2
+        },
+        "marginal": [],
+        "lower": [
+          "L64-0",
+          "L64-1"
+        ],
+        "upper": [
+          "L64-0",
+          "L64-1"
+        ]
+      },
+      {
+        "tag": "074",
+        "repetition": "r1",
+        "eligibleLabels": 8,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L74-0",
+          "L74-1",
+          "L74-3"
+        ],
+        "published": 7,
+        "dollars": 0.8518772,
+        "wallMs": 1071067.2659170001,
+        "overlap": {
+          "intersection": 0,
+          "union": 3
+        },
+        "marginal": [],
+        "lower": [
+          "L74-0",
+          "L74-1",
+          "L74-3"
+        ],
+        "upper": [
+          "L74-0",
+          "L74-1",
+          "L74-3"
+        ]
+      },
+      {
+        "tag": "074",
+        "repetition": "r2",
+        "eligibleLabels": 8,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L74-0",
+          "L74-1",
+          "L74-2",
+          "L74-3"
+        ],
+        "published": 6,
+        "dollars": 0.7336804,
+        "wallMs": 919881.359959,
+        "overlap": {
+          "intersection": 0,
+          "union": 4
+        },
+        "marginal": [],
+        "lower": [
+          "L74-0",
+          "L74-1",
+          "L74-2",
+          "L74-3"
+        ],
+        "upper": [
+          "L74-0",
+          "L74-1",
+          "L74-2",
+          "L74-3"
+        ]
+      },
+      {
+        "tag": "080",
+        "repetition": "r1",
+        "eligibleLabels": 5,
+        "covered": false,
+        "partial": false,
+        "hitLabels": [],
+        "published": 0,
+        "dollars": null,
+        "wallMs": null,
+        "overlap": {
+          "intersection": 0,
+          "union": 0
+        },
+        "marginal": [],
+        "lower": [],
+        "upper": []
+      },
+      {
+        "tag": "080",
+        "repetition": "r2",
+        "eligibleLabels": 5,
+        "covered": false,
+        "partial": false,
+        "hitLabels": [],
+        "published": 0,
+        "dollars": null,
+        "wallMs": null,
+        "overlap": {
+          "intersection": 0,
+          "union": 0
+        },
+        "marginal": [],
+        "lower": [],
+        "upper": []
+      },
+      {
+        "tag": "086",
+        "repetition": "r1",
+        "eligibleLabels": 3,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L86-0",
+          "L86-1",
+          "L86-2"
+        ],
+        "published": 3,
+        "dollars": 0.7074188,
+        "wallMs": 1028198.0509170005,
+        "overlap": {
+          "intersection": 0,
+          "union": 3
+        },
+        "marginal": [],
+        "lower": [
+          "L86-0",
+          "L86-1",
+          "L86-2"
+        ],
+        "upper": [
+          "L86-0",
+          "L86-1",
+          "L86-2"
+        ]
+      },
+      {
+        "tag": "086",
+        "repetition": "r2",
+        "eligibleLabels": 3,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L86-0",
+          "L86-1",
+          "L86-2"
+        ],
+        "published": 3,
+        "dollars": 0.6375172,
+        "wallMs": 969663.3370829988,
+        "overlap": {
+          "intersection": 0,
+          "union": 3
+        },
+        "marginal": [],
+        "lower": [
+          "L86-0",
+          "L86-1",
+          "L86-2"
+        ],
+        "upper": [
+          "L86-0",
+          "L86-1",
+          "L86-2"
+        ]
+      },
+      {
+        "tag": "088",
+        "repetition": "r1",
+        "eligibleLabels": 7,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L88-0",
+          "L88-1",
+          "L88-2",
+          "L88-4",
+          "L88-5",
+          "L88-6"
+        ],
+        "published": 7,
+        "dollars": 0.384176,
+        "wallMs": 1039306.926375,
+        "overlap": {
+          "intersection": 0,
+          "union": 6
+        },
+        "marginal": [],
+        "lower": [
+          "L88-0",
+          "L88-1",
+          "L88-2",
+          "L88-4",
+          "L88-5",
+          "L88-6"
+        ],
+        "upper": [
+          "L88-0",
+          "L88-1",
+          "L88-2",
+          "L88-4",
+          "L88-5",
+          "L88-6"
+        ]
+      },
+      {
+        "tag": "088",
+        "repetition": "r2",
+        "eligibleLabels": 7,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L88-0",
+          "L88-1",
+          "L88-2",
+          "L88-4",
+          "L88-5",
+          "L88-6"
+        ],
+        "published": 7,
+        "dollars": 0.402068,
+        "wallMs": 705765.194167,
+        "overlap": {
+          "intersection": 0,
+          "union": 6
+        },
+        "marginal": [],
+        "lower": [
+          "L88-0",
+          "L88-1",
+          "L88-2",
+          "L88-4",
+          "L88-5",
+          "L88-6"
+        ],
+        "upper": [
+          "L88-0",
+          "L88-1",
+          "L88-2",
+          "L88-4",
+          "L88-5",
+          "L88-6"
+        ]
+      },
+      {
+        "tag": "090",
+        "repetition": "r1",
+        "eligibleLabels": 5,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L90-0",
+          "L90-1",
+          "L90-2",
+          "L90-3"
+        ],
+        "published": 5,
+        "dollars": 0.812288,
+        "wallMs": 1348848.9119579997,
+        "overlap": {
+          "intersection": 0,
+          "union": 4
+        },
+        "marginal": [],
+        "lower": [
+          "L90-0",
+          "L90-1",
+          "L90-2",
+          "L90-3"
+        ],
+        "upper": [
+          "L90-0",
+          "L90-1",
+          "L90-2",
+          "L90-3"
+        ]
+      },
+      {
+        "tag": "090",
+        "repetition": "r2",
+        "eligibleLabels": 5,
+        "covered": true,
+        "partial": false,
+        "hitLabels": [
+          "L90-0",
+          "L90-1",
+          "L90-2",
+          "L90-3"
+        ],
+        "published": 5,
+        "dollars": 0.5965031999999999,
+        "wallMs": 1662459.6752080005,
+        "overlap": {
+          "intersection": 0,
+          "union": 4
+        },
+        "marginal": [],
+        "lower": [
+          "L90-0",
+          "L90-1",
+          "L90-2",
+          "L90-3"
+        ],
+        "upper": [
+          "L90-0",
+          "L90-1",
+          "L90-2",
+          "L90-3"
+        ]
+      }
+    ],
+    "units": 32,
+    "covered": 30,
+    "partial": [],
+    "recall": {
+      "hits": 93,
+      "eligible": 188,
+      "value": 0.4946808510638298,
+      "functional": {
+        "hits": 67,
+        "eligible": 104,
+        "value": 0.6442307692307693
+      },
+      "practice": {
+        "hits": 26,
+        "eligible": 84,
+        "value": 0.30952380952380953
+      }
+    },
+    "precision": {
+      "hits": 93,
+      "published": 148,
+      "value": 0.6283783783783784
+    },
+    "dollars": null,
+    "wall": {
+      "meanMs": 813866.1297568997,
+      "medianMs": 829591.7894164999
+    },
+    "overlap": {
+      "intersection": 0,
+      "union": 93
+    },
+    "marginal": 0,
+    "envelope": {
+      "lower": 93,
+      "upper": 94
+    }
+  },
+  "decisions": [
+    {
+      "family": "t-sol61-xhigh∪w-musewonder-xhigh",
+      "qualifies": true,
+      "conditions": {
+        "recall": true,
+        "envelope": true,
+        "bootstrap": true
+      },
+      "interval": [
+        0.02127659574468077,
+        0.13636363636363635
+      ],
+      "delta": {
+        "recall": 0.07978723404255322,
+        "precision": -0.2238839963559065,
+        "dollars": null,
+        "wallMs": -29247.61882858735
+      },
+      "ordering": {
+        "winner": "t-sol61-xhigh∪w-musewonder-xhigh",
+        "reason": "recall",
+        "provisional": false
+      }
+    },
+    {
+      "family": "t-sol61-xhigh∪x-musewonder-max",
+      "qualifies": true,
+      "conditions": {
+        "recall": true,
+        "envelope": true,
+        "bootstrap": true
+      },
+      "interval": [
+        0.01980198019801982,
+        0.14204545454545459
+      ],
+      "delta": {
+        "recall": 0.07978723404255322,
+        "precision": -0.23848668162747588,
+        "dollars": null,
+        "wallMs": -22115.69190530607
+      },
+      "ordering": {
+        "winner": "t-sol61-xhigh∪x-musewonder-max",
+        "reason": "recall",
+        "provisional": false
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "members": [
+        "t-sol61-xhigh∪w-musewonder-xhigh",
+        "t-sol61-xhigh∪x-musewonder-max"
+      ],
+      "winner": null,
+      "reason": "undecided: operator",
+      "provisional": false
+    }
+  ],
+  "candidateDecision": "undecided: operator"
+}
