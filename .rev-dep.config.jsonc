@@ -1,0 +1,21 @@
+{
+  "configVersion": "2.1",
+  "workspaces": [
+    {
+      "path": ".",
+      "prodEntryPoints": ["src/index.ts"],
+      "devEntryPoints": ["**/*.test.ts"],
+      "circularImportsDetection": { "enabled": true },
+      "orphanFilesDetection": { "enabled": true },
+      "unusedExportsDetection": { "enabled": true },
+      // oxlint loads oxlint-tsgolint, and the TypeScript package serves editors.
+      "unusedNodeModulesDetection": {
+        "enabled": true,
+        "excludeModules": ["oxlint-tsgolint", "typescript"],
+      },
+      "missingNodeModulesDetection": { "enabled": true },
+      "unresolvedImportsDetection": { "enabled": true },
+      "devDepsUsageOnProdDetection": { "enabled": true },
+    },
+  ],
+}

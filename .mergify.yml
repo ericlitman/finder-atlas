@@ -1,0 +1,20 @@
+extends: mergify-config
+queue_rules:
+  - name: default
+    # Mergify's `auto` timeout dequeued PRs whose queue commit had to rerun CI (mastra-pilot MASTRA-375).
+    checks_timeout: null
+    queue_conditions: []
+    merge_conditions: []
+merge_protections_settings:
+  auto_merge_conditions:
+    - base = main
+merge_protections:
+  - name: Required checks
+    if:
+      - base = main
+    success_conditions:
+      - -draft
+      - check-success = @unfret-eal/Unfret
+      - check-success = format
+      - check-success = lint
+      - check-success = test

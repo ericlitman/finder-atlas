@@ -1,0 +1,21 @@
+{
+  "name": "finder-atlas",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "format": "oxfmt .",
+    "format:check": "oxfmt --check .",
+    "lint": "oxlint --type-aware --type-check --deny-warnings . && rev-dep config run",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "oxfmt": "0.71.0",
+    "oxlint": "1.86.0",
+    "oxlint-tsgolint": "7.0.2003",
+    "rev-dep": "3.2.0",
+    "typescript": "7.0.2",
+    "vitest": "5.0.3"
+  },
+  "packageManager": "pnpm@10.34.5"
+}
